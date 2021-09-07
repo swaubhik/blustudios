@@ -14,10 +14,6 @@
       </swiper-slide>
       <swiper-slide class="slide-2">
         <img
-          src="/assets/images/Works/LIFESTYLE/Fountainhead/Fountainhead-cover.jpg"
-          alt=""
-        />
-        <img
           class="p-10"
           src="/assets/images/Works/LIFESTYLE/Fountainhead/Fountainhead.jpg"
           alt=""

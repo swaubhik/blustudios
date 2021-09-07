@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center mt-20 p-8">
     <div class="gallery overflow-hidden lg:overflow-visible">
       <img
-        class="images shadow-2xl p-[10px] md:p-4 m-1 md:m-2 lg:p-8"
+        class="images p-[10px] md:p-4 m-1 md:m-2 lg:p-8"
         v-for="image in images"
         :key="image.id"
         :src="image.pathLong"
