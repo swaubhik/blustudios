@@ -6,82 +6,36 @@
       :options="swiperOptionTop"
       ref="swiperTop"
     >
-      <swiper-slide class="slide-1">
-        <img
-          src="/assets/images/Works/LIFESTYLE/Aeropostal/Aeropostal.jpg"
-          alt=""
-        />
+      <swiper-slide 
+         v-for="image in images" 
+          :key="image.id"
+        class="slide-1">
+        <img :src="image.pathLong">
       </swiper-slide>
-      <swiper-slide class="slide-2">
-        <img
-          class="p-10"
-          src="/assets/images/Works/LIFESTYLE/Fountainhead/Fountainhead.jpg"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="slide-3">
-        <img
-          src="\assets\images\Works\LIFESTYLE\THE ARRIVAL - Pernia_s pop-up shop magazine\Pernias-pop-up-shop-thearrival.jpg"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="slide-4">
-        <img
-          src="/assets/images/Works/LIFESTYLE/Vinokilo/Love For everything/Vinokilo-love.jpg"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="slide-5">
-        <img
-          src="/assets/images/Works/LIFESTYLE/narangi devi/Naranga-devi.jpg"
-          alt=""
-        />
-      </swiper-slide>
+     
       <div
-        class="swiper-button-next swiper-button-white filter drop-shadow"
+        class="swiper-button-next swiper-button-black filter drop-shadow position fixed top 500px"
         slot="button-next"
       ></div>
       <div
-        class="swiper-button-prev swiper-button-white filter drop-shadow"
+        class="swiper-button-prev swiper-button-black filter drop-shadow position fixed top 500px"
         slot="button-prev"
       ></div>
     </swiper>
     <!-- swiper2 Thumbs -->
     <swiper
-      class="swiper gallery-thumbs fixed bottom-0 duration-300 ease-linear opacity-0 hover:opacity-100"
+      class="swiper gallery-thumbs fixed bottom-0 duration-300 ease-linear "
       :options="swiperOptionThumbs"
       ref="swiperThumbs"
     >
-      <swiper-slide class="slide-1">
+      <swiper-slide
+       v-for="cover in covers" 
+          :key="cover.id"
+       class="slide-1">
         <img
-          src="/assets/images/Works/LIFESTYLE/Aeropostal/Aeropostal-cover.jpg"
-          alt=""
-        />
+          :src="cover.pathLong"/>
       </swiper-slide>
-      <swiper-slide class="slide-2">
-        <img
-          src="/assets/images/Works/LIFESTYLE/Fountainhead/Fountainhead-cover.jpg"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="slide-3">
-        <img
-          src="/assets/images/Works/LIFESTYLE/THE ARRIVAL - Pernia_s pop-up shop magazine/The-arrival.jpg"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="slide-4">
-        <img
-          src="/assets/images/Works/LIFESTYLE/Vinokilo/Love For everything/Vinokilo-love-cover.jpg"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="slide-5">
-        <img
-          src="/assets/images/Works/LIFESTYLE/narangi devi/Naranga-devi-cover.jpg"
-          alt=""
-        />
-      </swiper-slide>
+     
     </swiper>
   </div>
 </template>
@@ -97,13 +51,15 @@ export default {
     SwiperSlide
   },
   data() {
-    return {
+    return { 
+      images: [],
+      covers: [],
       swiperOption: {
         lazy: true
       },
       swiperOptionTop: {
         loop: true,
-        loopedSlides: 5, // looped slides should be the same
+        loopedSlides: 5 , // looped slides should be the same
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -122,12 +78,38 @@ export default {
     };
   },
   mounted() {
+      this.importlayouts(
+      require.context(
+        "/static/assets/images/Works/LIFESTYLE/Layout/",
+        true,
+        /\.(png|jpe?g|svg|gif)$/
+      )
+    );
+    this.importcovers(
+      require.context(
+        "/static/assets/images/Works/LIFESTYLE/Thumbnail/",
+        true,
+        /\.(png|jpe?g|svg|gif)$/
+      )
+    );
     this.$nextTick(() => {
       const swiperTop = this.$refs.swiperTop.$swiper;
       const swiperThumbs = this.$refs.swiperThumbs.$swiper;
       swiperTop.controller.control = swiperThumbs;
       swiperThumbs.controller.control = swiperTop;
     });
+  },
+  methods: {
+    importlayouts(r) {
+      r.keys().forEach(key =>
+        this.images.push({ pathLong: r(key), pathShort: key })
+      );
+    },
+    importcovers(r) {
+      r.keys().forEach(key =>
+        this.covers.push({ pathLong: r(key), pathShort: key })
+      );
+    }
   }
 };
 </script>
