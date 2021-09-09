@@ -18,14 +18,15 @@
         </swiper-slide>
 
         <div
-          class=" fixed top-1/3 right-4 swiper-button-next swiper-button-white text-gray-500"
+          class=" fixed top-1/3 right-8 swiper-button-next swiper-button-white text-gray-500"
           slot="button-next"
         ></div>
         <div
-          class=" fixed top-1/3 swiper-button-prev swiper-button-black text-gray-500"
+          class=" fixed top-1/3 left-4 swiper-button-prev swiper-button-black text-gray-500"
           slot="button-prev"
         ></div>
       </swiper>
+      
       <!-- swiper2 Thumbs -->
       <swiper
         class="swiper gallery-thumbs"
@@ -124,11 +125,13 @@ export default {
   width: 100%;
 }
 .swiper.gallery-thumbs {
-  height: 40%;
+  /* height: 40%; */
   box-sizing: border-box;
-  padding: 0;
+  box-shadow: 15px 5px 20px gray;
+  padding: 20px;
+  background: white;
   position: fixed;
-  bottom: 0;
+  bottom: 5vh;
 }
 .swiper.gallery-thumbs .swiper-slide {
   width: 25%;
