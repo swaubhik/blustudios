@@ -1,4 +1,6 @@
 <template>
+<body>
+
   <div class="">
     <!-- swiper1 -->
     <swiper style="height: 100vh;"
@@ -14,17 +16,17 @@
       </swiper-slide>
      
       <div
-        class="swiper-button-next swiper-button-black filter drop-shadow background rgb(255, 255, 255) position fixed top 500px"
+        class="swiper-button-next swiper-button-black filter drop-shadow fixed top-[400px]"
         slot="button-next"
       ></div>
       <div
-        class="swiper-button-prev swiper-button-black filter drop-shadow position fixed top 500px"
+        class="swiper-button-prev swiper-button-black filter drop-shadow fixed top-[400px]"
         slot="button-prev"
       ></div>
     </swiper>
     <!-- swiper2 Thumbs -->
     <swiper
-      class="swiper gallery-thumbs fixed bottom-0 duration-300 ease-linear "
+      class="swiper gallery-thumbs"
       :options="swiperOptionThumbs"
       ref="swiperThumbs"
     >
@@ -38,6 +40,7 @@
      
     </swiper>
   </div>
+  </body>
 </template>
 
 <script>
@@ -67,6 +70,8 @@ export default {
         }
       },
       swiperOptionThumbs: {
+        observer: true,
+        observeParents: true,
         loop: true,
         loopedSlides: 5, // looped slides should be the same
         spaceBetween: 10,
@@ -115,25 +120,7 @@ export default {
 </script>
 
 <style scoped>
-/* .swiper .swiper-slide {
-  background-size: cover;
-  background-position: center;
-} */
-/* .swiper .swiper-slide.slide-1 {
-  background-image: url("/assets/images/Works/LIFESTYLE/Aeropostal/Aeropostal-cover.jpg");
-}
-.swiper .swiper-slide.slide-2 {
-  background-image: url("/assets/images/Works/LIFESTYLE/Fountainhead/Fountainhead-cover.jpg");
-}
-.swiper .swiper-slide.slide-3 {
-  background-image: url("/assets/images/Works/LIFESTYLE/THE ARRIVAL - Pernia_s pop-up shop magazine/The-arrival.jpg");
-}
-.swiper .swiper-slide.slide-4 {
-  background-image: url("/assets/images/Works/LIFESTYLE/Vinokilo/Love For everything/Vinokilo-love-cover.jpg");
-}
-.swiper .swiper-slide.slide-5 {
-  background-image: url("/assets/images/Works/LIFESTYLE/narangi devi/Naranga-devi-cover.jpg");
-} */
+
 .swiper.gallery-top {
   height: 70%;
   width: 100%;
@@ -142,6 +129,9 @@ export default {
   height: 40%;
   box-sizing: border-box;
   padding: 0;
+  position: fixed;
+  bottom: 0;
+  
 }
 .swiper.gallery-thumbs .swiper-slide {
   width: 25%;
