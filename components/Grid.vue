@@ -1,12 +1,12 @@
 <template>
   <div class="flex justify-center items-center mt-20 p-8">
     <div class="gallery overflow-hidden lg:overflow-visible">
-      <img
-        class="images p-[10px] m-auto  md:p-4 m-auto lg:p-8 py-10 sm:p-2 m-auto"
+      <img 
+        class="images my-10 mx-auto  md:p-4 mx-auto lg:px-8 py-12 sm:p-2 mx-auto"
         v-for="image in images"
         :key="image.id"
         :src="image.pathLong"
-        style="width:70%;"     
+        style="width:65%;"     
       />
     </div>
   </div>
@@ -56,6 +56,10 @@ export default {
   cursor: pointer;
 }
 
+.gallery .images:hover {
+ 
+  transform: scale(1.5);
+}
 .images:nth-child(5n) {
   transform: scale(1.1);
   margin: 100px 50px;
@@ -70,7 +74,7 @@ export default {
   position: relative;
 }
 .images:nth-child(1) {
-  transform: translateY(-70px);
+  transform: translateY(-50px);
   position: relative;
 }
 
