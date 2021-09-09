@@ -1,18 +1,18 @@
 <template>
   <div class="relative">
     <div
-      class="relative w-auto h-[85vh] bg-about-hero bg-center bg-no-repeat bg-fixed bg-cover bg-black"
+      class="relative h-[85vh] bg-about-hero bg-right bg-no-repeat bg-fixed bg-cover bg-black"
     >
       <div
-        class="w-[590px] p-10 md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2"
+        class="md:w-[590px] p-20 md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2"
       >
-        <h1 class=" uppercase text-9xl font-bold">
+        <h1 class=" uppercase text-7xl md:text-9xl font-bold">
           Show,
-          <span class="text-8xl block"
+          <span class="text-6xl md:text-8xl block"
             ><span class="text-white">AND</span> tell</span
           >
         </h1>
-        <p class="text-white block pt-20">
+        <p class="text-white md:block pt-20">
           We define the essence of your brand through storytelling.
           <br />
           Every brand has an identity and a story is the breath that infuses
@@ -21,17 +21,19 @@
         </p>
       </div>
     </div>
-    <div class="text-center p-8">
-      <h2 class="font-bold text-lg">
+    <div class="text-center p-8 space-y-2">
+      <h2 class="font-bold text-md">
         Creating &amp; Curating since 11 years 9 months 10 days
       </h2>
-      <p>
+      <p class="text-sm">
         Blu Studios has worked with over 100 brands, national and international
       </p>
     </div>
-    <div class="h-[70vh] py-10 bg-black text-center">
+    <div class="py-10 bg-black text-center">
       <h3 class="uppercase text-3xl text-white">We can help you with:</h3>
-      <div class="p-8 grid grid-flow-col gap-4">
+      <div
+        class="p-8 grid grid-cols-4 sm:grid-cols-none sm:grid-flow-col gap-4"
+      >
         <img
           class="w-full h-full"
           src="/assets/images/about/We can help with/visual-content.png"
@@ -71,7 +73,7 @@
     </div>
     <div class="container p-20 max-w-7xl text-center mx-auto">
       <h4 class="text-5xl uppercase">HOW WE WORK?</h4>
-      <p class="mt-10">
+      <p class="mt-10 space-y-4">
         As believers of balance between personal & professional, we curate the
         intricacies and aesthetics that let you tell YOUR brand’s story, the
         best way possible. This, of course, involves a process of rigorous

@@ -1,45 +1,42 @@
 <template>
-<body>
-
-  <div class="">
-    <!-- swiper1 -->
-    <swiper style="height: 100vh;"
-      class="swiper gallery-top"
-      :options="swiperOptionTop"
-      ref="swiperTop"
-    >
-      <swiper-slide style="overflow-y: scroll;"
-         v-for="image in images" 
+  <body>
+    <div class="">
+      <!-- swiper1 -->
+      <swiper
+        style="height: 100vh;"
+        class="swiper gallery-top"
+        :options="swiperOptionTop"
+        ref="swiperTop"
+      >
+        <swiper-slide
+          style="overflow-y: scroll;"
+          v-for="image in images"
           :key="image.id"
-        class="slide-1">
-        <img :src="image.pathLong">
-      </swiper-slide>
-     
-      <div
-        class="swiper-button-next swiper-button-black filter drop-shadow fixed top-[400px]"
-        slot="button-next"
-      ></div>
-      <div
-        class="swiper-button-prev swiper-button-black filter drop-shadow fixed top-[400px]"
-        slot="button-prev"
-      ></div>
-    </swiper>
-    <!-- swiper2 Thumbs -->
-    <swiper
-      class="swiper gallery-thumbs"
-      :options="swiperOptionThumbs"
-      ref="swiperThumbs"
-    >
-      <swiper-slide
-       v-for="cover in covers" 
-          :key="cover.id"
-       class="slide-1">
-        <img
-          :src="cover.pathLong"/>
-      </swiper-slide>
-     
-    </swiper>
-  </div>
+          class="slide-1"
+        >
+          <img :src="image.pathLong" />
+        </swiper-slide>
+
+        <div
+          class=" fixed top-1/2 right-4 swiper-button-next swiper-button-white text-gray-500"
+          slot="button-next"
+        ></div>
+        <div
+          class=" fixed top-1/2 swiper-button-prev swiper-button-black text-gray-500"
+          slot="button-prev"
+        ></div>
+      </swiper>
+      <!-- swiper2 Thumbs -->
+      <swiper
+        class="swiper gallery-thumbs"
+        :options="swiperOptionThumbs"
+        ref="swiperThumbs"
+      >
+        <swiper-slide v-for="cover in covers" :key="cover.id" class="slide-1">
+          <img :src="cover.pathLong" />
+        </swiper-slide>
+      </swiper>
+    </div>
   </body>
 </template>
 
@@ -54,15 +51,17 @@ export default {
     SwiperSlide
   },
   data() {
-    return { 
+    return {
       images: [],
       covers: [],
       swiperOption: {
         lazy: true
       },
       swiperOptionTop: {
+        observer: true,
+        observeParents: true,
         loop: true,
-        loopedSlides: 5 , // looped slides should be the same
+        loopedSlides: 5, // looped slides should be the same
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -83,7 +82,7 @@ export default {
     };
   },
   mounted() {
-      this.importlayouts(
+    this.importlayouts(
       require.context(
         "/static/assets/images/Works/LIFESTYLE/Layout/",
         true,
@@ -114,13 +113,12 @@ export default {
       r.keys().forEach(key =>
         this.covers.push({ pathLong: r(key), pathShort: key })
       );
-    },
+    }
   }
 };
 </script>
 
 <style scoped>
-
 .swiper.gallery-top {
   height: 70%;
   width: 100%;
@@ -131,7 +129,6 @@ export default {
   padding: 0;
   position: fixed;
   bottom: 0;
-  
 }
 .swiper.gallery-thumbs .swiper-slide {
   width: 25%;
