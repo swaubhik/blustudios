@@ -18,11 +18,11 @@
         </swiper-slide>
 
         <div
-          class=" fixed top-1/2 right-4 swiper-button-next swiper-button-white text-gray-500"
+          class=" fixed top-1/3 right-4 swiper-button-next swiper-button-white text-gray-500"
           slot="button-next"
         ></div>
         <div
-          class=" fixed top-1/2 swiper-button-prev swiper-button-black text-gray-500"
+          class=" fixed top-1/3 swiper-button-prev swiper-button-black text-gray-500"
           slot="button-prev"
         ></div>
       </swiper>
