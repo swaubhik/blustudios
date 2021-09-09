@@ -1,12 +1,12 @@
 <template>
   <div class="">
     <!-- swiper1 -->
-    <swiper
+    <swiper style="height: 100vh;"
       class="swiper gallery-top"
       :options="swiperOptionTop"
       ref="swiperTop"
     >
-      <swiper-slide 
+      <swiper-slide style="overflow-y: scroll;"
          v-for="image in images" 
           :key="image.id"
         class="slide-1">
@@ -14,7 +14,7 @@
       </swiper-slide>
      
       <div
-        class="swiper-button-next swiper-button-black filter drop-shadow position fixed top 500px"
+        class="swiper-button-next swiper-button-black filter drop-shadow background rgb(255, 255, 255) position fixed top 500px"
         slot="button-next"
       ></div>
       <div
@@ -109,7 +109,7 @@ export default {
       r.keys().forEach(key =>
         this.covers.push({ pathLong: r(key), pathShort: key })
       );
-    }
+    },
   }
 };
 </script>
