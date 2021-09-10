@@ -66,15 +66,11 @@ export default {
   margin: 100px 50px;
 }
 .images:nth-child(2n) {
-  transform: translateX(100px);
+  transform: translateX(70px);
   position: relative;
 }
-.images:nth-child(2n + 1) {
- float: left;
-}
-
 .images:nth-child(3n + 1) {
-  transform: translateY(100px);
+  transform: translateY(70px);
   position: relative;
 }
 .images:nth-child(1) {
@@ -90,7 +86,7 @@ export default {
   }
   .images {
     width: 400px;
-     padding: 2.5em 0.5em;
+     padding: 30px 10px;
   }
   .images:nth-child(5n) {
   transform: scale(1.1);

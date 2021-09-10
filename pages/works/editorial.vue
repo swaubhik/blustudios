@@ -124,11 +124,10 @@ export default {
   width: 100%;
 }
 .swiper.gallery-thumbs {
-  height: 40%;
-  box-sizing: border-box;
-  padding: 0;
+    box-sizing: border-box;
+  padding: 20px;
   position: fixed;
-  bottom: 0;
+  bottom: 5vh;
 }
 .swiper.gallery-thumbs .swiper-slide {
   width: 25%;

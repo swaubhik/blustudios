@@ -127,9 +127,7 @@ export default {
 .swiper.gallery-thumbs {
   /* height: 40%; */
   box-sizing: border-box;
-  box-shadow: 15px 5px 20px gray;
   padding: 20px;
-  background: white;
   position: fixed;
   bottom: 5vh;
 }
