@@ -96,8 +96,8 @@
       <div class="my-8 flex space-x-4 justify-center items-center">
         <a href="#">
           <svg
-            width="51"
-            height="50"
+            width="40"
+            height="40"
             viewBox="0 0 51 50"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -127,8 +127,8 @@
         </a>
         <a href="#">
           <svg
-            width="51"
-            height="51"
+            width="39"
+            height="39"
             viewBox="0 0 51 51"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

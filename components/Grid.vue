@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center mt-20 p-8">
     <div class="gallery overflow-hidden lg:overflow-visible">
       <img 
-        class="images my-10 mx-auto  md:p-4 mx-auto lg:px-8 py-12 sm:p-2 mx-auto"
+        class="images my-10 mx-auto  md:p-4 mx-auto lg:px-8 py-12 m-10 sm:p-2 mx-auto"
         v-for="image in images"
         :key="image.id"
         :src="image.pathLong"
@@ -54,6 +54,7 @@ export default {
   -webkit-transition: all 350ms ease;
   transition: all 350ms ease;
   cursor: pointer;
+  
 }
 
 .gallery .images:hover {
@@ -67,6 +68,9 @@ export default {
 .images:nth-child(2n) {
   transform: translateX(100px);
   position: relative;
+}
+.images:nth-child(2n + 1) {
+ float: left;
 }
 
 .images:nth-child(3n + 1) {
