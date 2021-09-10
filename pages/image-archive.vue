@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="relative h-96 bg-cover bg-no-repeat  bg-image-hero">
+  <div class="container m-0 p-0">
+    <div class="relative w-[100vw] h-85 bg-cover bg-no-repeat  bg-image-hero">
       <div class="py-32 text-center">
         <h2 class="font-bold text-white text-6xl">
           Image Archive

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center p-8">
+  <div class="galleryCon w-[99vw] flex m-auto justify-center items-center p-8">
     <div class="gallery">
       <div v-for="image in images" :key="image.id">
         <div class="pics">
@@ -64,7 +64,7 @@ export default {
   -webkit-column-width: 25%;
   -moz-column-width: 25%;
   column-width: 25%;
-  padding: 0 12px;
+  padding: 20px 12px;
 }
 .gallery .pics {
   -webkit-transition: all 350ms ease;
@@ -77,19 +77,23 @@ export default {
 }
 @media (max-width: 991px) {
   .gallery {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
   }
 }
 @media (max-width: 480px) {
   .gallery {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
     -webkit-column-width: 100%;
     -moz-column-width: 100%;
     column-width: 100%;
+  }
+  .galleryCon{
+    padding: 5px;
+    margin: auto;
   }
 }
 </style>
