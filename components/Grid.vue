@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center items-center mt-20 p-8">
-    <div class="gallery overflow-hidden lg:overflow-visible">
+    <draggable class="gallery overflow-hidden lg:overflow-visible">
       <img 
         class="images my-10 mx-auto  md:p-4 mx-auto lg:px-8 py-12 m-10 sm:p-2 mx-auto"
         v-for="image in images"
@@ -8,12 +8,17 @@
         :src="image.pathLong"
         style="width:65%;"     
       />
-    </div>
+    </draggable>
   </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable';
+
 export default {
+  components: {
+    draggable
+  },
   name: "client",
   data() {
     return {
@@ -66,15 +71,11 @@ export default {
   margin: 100px 50px;
 }
 .images:nth-child(2n) {
-  transform: translateX(100px);
+  transform: translateX(70px);
   position: relative;
 }
-.images:nth-child(2n + 1) {
- float: left;
-}
-
 .images:nth-child(3n + 1) {
-  transform: translateY(100px);
+  transform: translateY(70px);
   position: relative;
 }
 .images:nth-child(1) {
@@ -90,7 +91,7 @@ export default {
   }
   .images {
     width: 400px;
-     padding: 2.5em 0.5em;
+     padding: 30px 10px;
   }
   .images:nth-child(5n) {
   transform: scale(1.1);
