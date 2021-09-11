@@ -6,7 +6,7 @@
         v-for="image in images"
         :key="image.id"
         :src="image.pathLong"
-        style="width:65%;"     
+        style="width:62%;"     
       />
     </draggable>
   </div>
@@ -56,8 +56,8 @@ export default {
   padding: 0px 12px;
 }
 .gallery .images {
-  -webkit-transition: all 350ms ease;
-  transition: all 350ms ease;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
   cursor: pointer;
   
 }
