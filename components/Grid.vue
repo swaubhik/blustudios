@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center mt-20 p-8">
     <draggable class="gallery overflow-hidden lg:overflow-visible">
       <img 
-        class="images my-10 mx-auto  md:p-4 mx-auto lg:px-8 py-12 m-10 sm:p-2 mx-auto"
+        class="images my-10 md:p-4 mx-auto lg:px-8 py-12 m-10 sm:p-2"
         v-for="image in images"
         :key="image.id"
         :src="image.pathLong"

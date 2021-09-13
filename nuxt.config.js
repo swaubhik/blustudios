@@ -34,6 +34,11 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+  /*
+   ** importing a custom loader. this will overwrite the default loader
+   */
+  loading: '~/components/LoadingBar.vue',
+
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
