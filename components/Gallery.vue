@@ -1,16 +1,12 @@
 <template>
-  <div class="galleryCon w-[99vw] flex m-auto justify-center items-center p-8">
+  <div class="galleryCon flex justify-center items-center pt-8 px-4">
     <div class="gallery">
       <div v-for="image in images" :key="image.id">
         <div class="pics">
           <img :src="image.pathLong" style="width:100%;" />
         </div>
       </div>
-      <div v-for="image in images2" :key="image.id">
-        <div class="pics">
-          <img :src="image.pathLong" style="width:100%;" />
-        </div>
-      </div>
+      
     </div>
   </div>
 </template>
@@ -20,8 +16,7 @@ export default {
   name: "client",
   data() {
     return {
-      images: [],
-      images2: []
+      images: []
     };
   },
 
@@ -33,13 +28,7 @@ export default {
         /\.(png|jpe?g|svg|gif)$/
       )
     );
-    this.importAll(
-      require.context(
-        "/static/assets/images/image-archive/gallery-2",
-        true,
-        /\.*$/
-      )
-    );
+    
   },
 
   methods: {
@@ -48,11 +37,7 @@ export default {
         this.images.push({ pathLong: r(key), pathShort: key })
       );
     },
-    importAll(p) {
-      p.keys().forEach(key =>
-        this.images2.push({ pathLong: p(key), pathShort: key })
-      );
-    }
+  
   }
 };
 </script>
