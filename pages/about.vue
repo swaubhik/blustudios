@@ -94,7 +94,7 @@
         Want to be the first one to know about our work? Follow us on:
       </p>
       <div class="my-8 flex space-x-4 justify-center items-center">
-        <a href="#">
+        <a href="https://www.instagram.com/blustudios_official/?utm_medium=copy_link" target="_blank">
           <svg
             width="40"
             height="40"
@@ -125,7 +125,7 @@
             />
           </svg>
         </a>
-        <a href="#">
+        <a href="https://www.linkedin.com/company/blustudios9/" target="_blank">
           <svg
             width="39"
             height="39"
