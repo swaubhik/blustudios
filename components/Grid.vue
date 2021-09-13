@@ -53,18 +53,18 @@ export default {
   -webkit-column-width: 100%;
   -moz-column-width: 100%;
   column-width: 100%;
-  padding: 0px 12px;
+  padding: 20px 12px;
 }
 .gallery .images {
   -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
+  transition: all 800ms ease;
   cursor: pointer;
   
 }
 
 .gallery .images:hover {
  
-  transform: scale(1.5);
+  transform: scale(1.4);
 }
 .images:nth-child(5n) {
   transform: scale(1.1);
@@ -91,7 +91,7 @@ export default {
   }
   .images {
     width: 400px;
-     padding: 30px 10px;
+     padding: 50px 10px;
   }
   .images:nth-child(5n) {
   transform: scale(1.1);

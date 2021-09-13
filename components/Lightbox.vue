@@ -1,27 +1,30 @@
 <template>
-    <div class="gallery pt-12 px-4">
-      <div v-for="image in images" :key="image.id">
-        <div class="pics">
-          <img :src="image.pathLong" style="width:100%;" />
-        </div>
-      </div>
-      
-    </div>
+<div class="gallery pt-[50px] px-4">
+<div class="pics" v-for="(image, index) in images" :key="index" @click="toggler = !toggler">
+<img :src="image.pathLong" style="width:100%;" />
 
+<FsLightbox
+:toggler="toggler"
+:sources="[image.pathLong]"
+:thumbs="[image.pathLong]"
+/>
+</div>
+</div>
 </template>
 
 <script>
-
-
+import FsLightbox from "fslightbox-vue";
 export default {
-  name: "client",
-  data() {
-    return {
-      images: []
-    };
-  },
+components: { FsLightbox },
 
-  mounted() {
+data() {
+return {
+images: [],
+toggler: false,
+index: 0,
+}
+},
+mounted() {
     this.importAll(
       require.context(
         "/static/assets/images/image-archive/gallery/",
@@ -31,7 +34,6 @@ export default {
     );
     
   },
-
   methods: {
     importAll(r) {
       r.keys().forEach(key =>
@@ -40,8 +42,9 @@ export default {
     },
   
   }
-};
+}
 </script>
+
 <style scoped>
 .gallery {
   -webkit-column-count: 4;
@@ -50,7 +53,7 @@ export default {
   -webkit-column-width: 25%;
   -moz-column-width: 25%;
   column-width: 25%;
-  padding: 20px 12px;
+  
 }
 .gallery .pics {
   -webkit-transition: all 350ms ease;

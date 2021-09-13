@@ -9,12 +9,12 @@
         ref="swiperTop"
       >
         <swiper-slide
-          style="overflow-y: scroll;"
+          style=" overflow-y: scroll;"
           v-for="image in images"
           :key="image.id"
           class="slide-1"
         >
-          <img :src="image.pathLong" />
+          <img class="w-[100vw]" :src="image.pathLong" />
         </swiper-slide>
 
         <div
@@ -138,5 +138,39 @@ export default {
 }
 .swiper.gallery-thumbs .swiper-slide-active {
   opacity: 1;
+}
+@media (max-width: 991px) {
+  .swiper.gallery-thumbs {
+  /* height: 40%; */
+  box-sizing: border-box;
+  padding: 20px;
+  position: fixed;
+  bottom: 3vh;
+}
+.swiper.gallery-thumbs .swiper-slide {
+  width: 50%;
+  height: 100%;
+  opacity: 0.4;
+}
+.swiper.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+}
+@media (max-width: 480px) {
+   .swiper.gallery-thumbs {
+  /* height: 40%; */
+  box-sizing: border-box;
+  padding: 20px;
+  position: fixed;
+  bottom: 6vh;
+}
+.swiper.gallery-thumbs .swiper-slide {
+  width: 50%;
+  height: 100%;
+  opacity: 1;
+}
+.swiper.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
 }
 </style>
