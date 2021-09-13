@@ -2,13 +2,13 @@
 <div class="gallery pt-[50px] px-4">
 <div class="pics" v-for="(image, index) in images" :key="index" @click="toggler = !toggler">
 <img :src="image.pathLong" style="width:100%;" />
-</div>
 
 <FsLightbox
 :toggler="toggler"
-:sources="['~/static/assets/images/image-archive/gallery/Casino-in-Vegas-blu-studios-1.jpg']"
-:index="index"
+:sources="[image.pathLong]"
+:thumbs="[image.pathLong]"
 />
+</div>
 </div>
 </template>
 
@@ -16,6 +16,7 @@
 import FsLightbox from "fslightbox-vue";
 export default {
 components: { FsLightbox },
+
 data() {
 return {
 images: [],

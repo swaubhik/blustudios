@@ -6,7 +6,7 @@
       <div
         class="md:w-[590px] p-20 md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2"
       >
-        <h1 class=" uppercase text-7xl md:text-9xl font-bold">
+        <h1 class=" uppercase text-7xl md:text-9xl font-extrabold">
           Show,
           <span class="text-6xl md:text-8xl block"
             ><span class="text-white">AND</span> tell</span
