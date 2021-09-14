@@ -3,13 +3,13 @@
     <div class="">
       <!-- swiper1 -->
       <swiper
-        style="height: 100vh;"
+        style="height: 100vh"
         class="swiper gallery-top"
         :options="swiperOptionTop"
         ref="swiperTop"
       >
         <swiper-slide
-          style=" overflow-y: scroll;"
+          style="overflow-y: scroll"
           v-for="image in images"
           :key="image.id"
           class="slide-1"
@@ -18,15 +18,27 @@
         </swiper-slide>
 
         <div
-          class=" fixed top-1/3 right-8 swiper-button-next swiper-button-white text-gray-500"
+          class="
+            fixed
+            top-1/3
+            right-8
+            swiper-button-next swiper-button-white
+            text-gray-500
+          "
           slot="button-next"
         ></div>
         <div
-          class=" fixed top-1/3 left-4 swiper-button-prev swiper-button-black text-gray-500"
+          class="
+            fixed
+            top-1/3
+            left-4
+            swiper-button-prev swiper-button-black
+            text-gray-500
+          "
           slot="button-prev"
         ></div>
       </swiper>
-      
+
       <!-- swiper2 Thumbs -->
       <swiper
         class="swiper gallery-thumbs"
@@ -49,14 +61,14 @@ export default {
   title: "Thumbs gallery with Two-way control",
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
   },
   data() {
     return {
       images: [],
       covers: [],
       swiperOption: {
-        lazy: true
+        lazy: true,
       },
       swiperOptionTop: {
         observer: true,
@@ -66,8 +78,8 @@ export default {
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
+          prevEl: ".swiper-button-prev",
+        },
       },
       swiperOptionThumbs: {
         observer: true,
@@ -78,8 +90,8 @@ export default {
         centeredSlides: true,
         slidesPerView: "auto",
         touchRatio: 0.2,
-        slideToClickedSlide: true
-      }
+        slideToClickedSlide: true,
+      },
     };
   },
   mounted() {
@@ -92,7 +104,7 @@ export default {
     );
     this.importcovers(
       require.context(
-        "/static/assets/images/Works/LIFESTYLE/Thumbnail/",
+        "/static/assets/images/Works/LIFESTYLE/Cover/",
         true,
         /\.(png|jpe?g|svg|gif)$/
       )
@@ -106,16 +118,16 @@ export default {
   },
   methods: {
     importlayouts(r) {
-      r.keys().forEach(key =>
+      r.keys().forEach((key) =>
         this.images.push({ pathLong: r(key), pathShort: key })
       );
     },
     importcovers(r) {
-      r.keys().forEach(key =>
+      r.keys().forEach((key) =>
         this.covers.push({ pathLong: r(key), pathShort: key })
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -141,36 +153,34 @@ export default {
 }
 @media (max-width: 991px) {
   .swiper.gallery-thumbs {
-  /* height: 40%; */
-  box-sizing: border-box;
-  padding: 20px;
-  position: fixed;
-  bottom: 3vh;
-}
-.swiper.gallery-thumbs .swiper-slide {
-  width: 50%;
-  height: 100%;
-  opacity: 0.4;
-}
-.swiper.gallery-thumbs .swiper-slide-active {
-  opacity: 1;
-}
+    box-sizing: border-box;
+    padding: 20px;
+    position: fixed;
+    bottom: 3vh;
+  }
+  .swiper.gallery-thumbs .swiper-slide {
+    width: 33%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  .swiper.gallery-thumbs .swiper-slide-active {
+    opacity: 1;
+  }
 }
 @media (max-width: 480px) {
-   .swiper.gallery-thumbs {
-  /* height: 40%; */
-  box-sizing: border-box;
-  padding: 20px;
-  position: fixed;
-  bottom: 6vh;
-}
-.swiper.gallery-thumbs .swiper-slide {
-  width: 50%;
-  height: 100%;
-  opacity: 1;
-}
-.swiper.gallery-thumbs .swiper-slide-active {
-  opacity: 1;
-}
+  .swiper.gallery-thumbs {
+    box-sizing: border-box;
+    padding: 20px;
+    position: fixed;
+    bottom: 6vh;
+  }
+  .swiper.gallery-thumbs .swiper-slide {
+    width: 50%;
+    height: 100%;
+    opacity: 1;
+  }
+  .swiper.gallery-thumbs .swiper-slide-active {
+    opacity: 1;
+  }
 }
 </style>

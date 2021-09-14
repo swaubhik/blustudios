@@ -1,11 +1,15 @@
 <template>
   <div class="gallery pt-[50px] px-4">
-    <div class="pics" v-for="(image, index) in images" :key="index" @click="toggler = !toggler">
-<img :src="image" style="width:100%;" />
+    <div
+      class="pics"
+      v-for="(image, index) in images"
+      :key="image"
+      @click="openLightboxOnSlide(index + 1)"
+    >
+      <img :src="image" style="width: 100%" />
     </div>
 
-    <FsLightbox :toggler="toggler" :sources="images"/>
-    
+    <FsLightbox :toggler="toggler" :slide="slide" :sources="images" />
   </div>
 </template>
 
@@ -18,7 +22,7 @@ export default {
     return {
       images: [],
       toggler: false,
-      index: 0,
+      slide: 1,
     };
   },
   mounted() {
@@ -32,9 +36,13 @@ export default {
   },
   methods: {
     importAll(r) {
-      r.keys().forEach(key => this.images.push(  r(key) ));
-    }
-  }
+      r.keys().forEach((key) => this.images.push(r(key)));
+    },
+    openLightboxOnSlide: function (number) {
+      this.slide = number;
+      this.toggler = !this.toggler;
+    },
+  },
 };
 </script>
 

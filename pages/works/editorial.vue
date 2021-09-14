@@ -18,14 +18,18 @@
         </swiper-slide>
 
         <div
-          class=" fixed top-1/3 right-8 swiper-button-next swiper-button-white text-gray-500"
+          class=" fixed top-1/3  swiper-button-next swiper-button-white text-gray-500 lg:right-8 md:right-4 sm: right-2"
           slot="button-next"
         ></div>
         <div
-          class=" fixed top-1/3 left-4 swiper-button-prev swiper-button-black text-gray-500"
+          class=" fixed top-1/3  swiper-button-prev swiper-button-black text-gray-500 lg:left-4 md:left-4 sm: left-2"
           slot="button-prev"
         ></div>
       </swiper>
+      <div id="close" ><nuxt-link id="closeLink"
+      class="flex flex-row filter transition duration-300 ease-in-out hover:drop-shadow-2xl "
+      to="/works"><svg class="opacity-70" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 
+      </nuxt-link></div>
       <!-- swiper2 Thumbs -->
       <swiper
         class="swiper gallery-thumbs"
@@ -119,6 +123,24 @@ export default {
 </script>
 
 <style scoped>
+#close{
+  width: 100vw;
+  z-index: 100;
+  position: fixed;
+  bottom: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+#close #closeLink{
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font: 15px;
+}
 .swiper.gallery-top {
   height: 70%;
   width: 100%;
@@ -136,5 +158,13 @@ export default {
 }
 .swiper.gallery-thumbs .swiper-slide-active {
   opacity: 1;
+}
+@media (max-width: 480px){
+.swiper-button-next{
+transform: scale(.7);
+}
+.swiper-button-prev{
+  transform: scale(.7);
+}
 }
 </style>
