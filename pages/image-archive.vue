@@ -8,8 +8,8 @@
     </div>
     <div>
       <!-- <h1>Images</h1> -->
-      <LazyGallery />
-      <!-- <Lightbox/> -->
+      <!-- <LazyGallery /> -->
+      <Lightbox/>
       
     </div>
   </div>
