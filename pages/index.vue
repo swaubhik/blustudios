@@ -1,37 +1,49 @@
 <template>
   <div>
     <div
-      class="flex justify-center w-full h-screen bg-home-hero bg-center bg-no-repeat bg-fixed bg-cover bg-black">
-      <span class="absolute bottom-[20px] h-[35px] animate-bounce" v-on:click="scrollToEnd()">
-      <svg xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 0 24 24" width="44px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+      class="
+        flex
+        justify-center
+        w-full
+        h-screen
+        bg-home-hero bg-center bg-no-repeat bg-fixed bg-cover bg-black
+      "
+    >
+      <span @click="goto" class="absolute bottom-[20px] animate-bounce">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="44px"
+          viewBox="0 0 24 24"
+          width="44px"
+          fill="#FFFFFF"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+        </svg>
       </span>
     </div>
 
-    <LazyGrid class="container" />
+    <LazyGrid id="feed" ref="feed"/>
   </div>
 </template>
 
 <script>
-
 export default {
   /*
    ** programmatically start the loader so we force the page to take x2seconds to load
    */
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-      setTimeout(() => this.$nuxt.$loading.finish(), 5500);
-    });
-  },
-  methods: {
-  	scrollToEnd: function() {    	
-      var container = this.$el.querySelector("#container");
-      container.scrollTop = container.scrollHeight;
-    },
-    populate: function() {
-    	for(var i = 0; i<100; i++) {
-        this.items.push("Item #"+i);
-      }    
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     this.$nuxt.$loading.start();
+  //     setTimeout(() => this.$nuxt.$loading.finish(), 5500);
+  //   });
+  // },
+   methods: {
+    goto() {
+      var element = document.querySelector("#feed")
+      var top = element.offsetTop;
+
+      window.scrollTo({top: top, behavior: 'smooth'});
     }
   }
 };
