@@ -5,7 +5,7 @@
       to="/works/editorial"
     >
       <img class="w-[400px] filter transition duration-500 ease-in-out hover:scale-75"
-        src="/assets/images/Works/Editorial/Editorial-gif.gif"
+        src="/assets/images/Works/Editorial/Editorial.gif"
         alt="editorial"
       />
       <span class="uppercase p-6 text-xl filter drop-shadow-xl pt-6"
@@ -17,7 +17,7 @@
       to="/works/lifestyle"
     >
       <img class="w-[400px] filter transition duration-500 ease-in-out hover:scale-75"
-        src="/assets/images/Works/Lifestyle/Lifestyle-gif.gif"
+        src="/assets/images/Works/Lifestyle/Lifestyle.gif"
         alt="lifestyle"
       />
       <span class="uppercase p-6 text-xl filter drop-shadow-2xl"

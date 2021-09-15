@@ -36,37 +36,37 @@
       >
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/visual-content.jpg"
+          src="/assets/images/about/services/Visual-Content.jpg"
           alt="Creating-curating"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/creative-direction.jpg"
+          src="/assets/images/about/services/creative-direction.jpg"
           alt="creative-direction"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/filming.jpg"
+          src="/assets/images/about/services/filming.jpg"
           alt="filming"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/Lookbooks.jpg"
+          src="/assets/images/about/services/lookbooks.jpg"
           alt="Lookbooks-campaings"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/photography.jpg"
+          src="/assets/images/about/services/photography.jpg"
           alt="Photography"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/production.jpg"
+          src="/assets/images/about/services/production.jpg"
           alt="Production"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/Talent-development.jpg"
+          src="/assets/images/about/services/talent-development.jpg"
           alt="Talent Development"
         />
       </div>

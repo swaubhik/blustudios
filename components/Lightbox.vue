@@ -21,8 +21,10 @@ export default {
   data() {
     return {
       images: [],
+      previews: [],
       toggler: false,
       slide: 1,
+      Lazy: true
     };
   },
   mounted() {
@@ -38,6 +40,7 @@ export default {
     importAll(r) {
       r.keys().forEach((key) => this.images.push(r(key)));
     },
+    
     openLightboxOnSlide: function (number) {
       this.slide = number;
       this.toggler = !this.toggler;

@@ -32,12 +32,12 @@ export default {
   /*
    ** programmatically start the loader so we force the page to take x2seconds to load
    */
-  // mounted() {
-  //   this.$nextTick(() => {
-  //     this.$nuxt.$loading.start();
-  //     setTimeout(() => this.$nuxt.$loading.finish(), 5500);
-  //   });
-  // },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 5500);
+    });
+  },
    methods: {
     goto() {
       var element = document.querySelector("#feed")

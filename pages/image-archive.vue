@@ -9,7 +9,7 @@
     <div>
       <!-- <h1>Images</h1> -->
       <!-- <LazyGallery /> -->
-      <Lightbox/>
+      <LazyLightbox/>
       
     </div>
   </div>
