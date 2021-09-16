@@ -1,6 +1,6 @@
 <template>
   <div >
-    <div class="flex justify-center w-full h-screen">
+    <div class="flex justify-center w-full h-screen bg-black">
       <video muted autoplay loop id="vid">
         <source src="/assets/images/home/home.mp4" type="video/mp4" />
       </video>
@@ -46,5 +46,6 @@ export default {
 <style scoped>
 #vid{
   object-fit: cover;
+  width: 100%;
 }
 </style>

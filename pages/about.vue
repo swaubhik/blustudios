@@ -182,6 +182,16 @@
 </template>
 <script>
 export default {
+  head: {
+    title: 'About Us',
+    meta: [
+      {
+        hid: 'About Us - Blu Studios',
+        name: 'About Us',
+        content: 'We define the essence of your brand through storytelling. Every brand has an identity and a story is the breath that infuses life into it. Here at Blu Studios, we create a visually dynamic space that allows these stories to come alive.'
+      }
+    ],
+  },
   methods: {
     scrollToTop() {
       let currentScroll = document.documentElement.scrollTop,
