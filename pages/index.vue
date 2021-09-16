@@ -1,15 +1,10 @@
 <template>
-  <div>
-    <div
-      class="
-        flex
-        justify-center
-        w-full
-        h-screen
-        bg-home-hero bg-center bg-no-repeat bg-fixed bg-cover bg-black
-      "
-    >
-      <span @click="goto" class="absolute bottom-[20px] animate-bounce">
+  <div >
+    <div class="flex justify-center w-full h-screen">
+      <video muted autoplay loop id="vid">
+        <source src="/assets/images/home/home.mp4" type="video/mp4" />
+      </video>
+      <span @click="goto" class="absolute bottom-[20px] z-50 animate-bounce">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="44px"
@@ -23,7 +18,7 @@
       </span>
     </div>
 
-    <LazyGrid id="feed" ref="feed"/>
+    <LazyGrid id="feed" ref="feed" />
   </div>
 </template>
 
@@ -38,13 +33,18 @@ export default {
       setTimeout(() => this.$nuxt.$loading.finish(), 5500);
     });
   },
-   methods: {
+  methods: {
     goto() {
-      var element = document.querySelector("#feed")
+      var element = document.querySelector("#feed");
       var top = element.offsetTop;
 
-      window.scrollTo({top: top, behavior: 'smooth'});
-    }
-  }
+      window.scrollTo({ top: top, behavior: "smooth" });
+    },
+  },
 };
 </script>
+<style scoped>
+#vid{
+  object-fit: cover;
+}
+</style>

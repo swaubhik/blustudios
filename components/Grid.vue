@@ -6,6 +6,7 @@
         v-for="image in images"
         :key="image.id"
         :src="image.pathLong"
+        alt="Blu Studios"
         style="width:62%;"     
       />
     </draggable>

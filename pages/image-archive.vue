@@ -7,8 +7,7 @@
         </h2>
     </div>
     <div>
-      <!-- <h1>Images</h1> -->
-      <!-- <LazyGallery /> -->
+     
       <LazyLightbox/>
       
     </div>
