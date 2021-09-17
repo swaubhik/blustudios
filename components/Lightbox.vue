@@ -1,30 +1,33 @@
 <template>
-<div class="gallery pt-[50px] px-4">
-<div class="pics" v-for="(image, index) in images" :key="index" @click="toggler = !toggler">
-<img :src="image.pathLong" style="width:100%;" />
+  <div class="gallery pt-[50px] px-4">
+    <div
+      class="pics"
+      v-for="(image, index) in images"
+      :key="image"
+      @click="openLightboxOnSlide(index + 1)"
+    >
+      <img :src="image" style="width: 100%" alt="Blustudios" />
+    </div>
 
-<FsLightbox
-:toggler="toggler"
-:sources="[image.pathLong]"
-:thumbs="[image.pathLong]"
-/>
-</div>
-</div>
+    <FsLightbox :toggler="toggler" :slide="slide" :sources="images" />
+  </div>
 </template>
 
 <script>
 import FsLightbox from "fslightbox-vue";
 export default {
-components: { FsLightbox },
+  components: { FsLightbox },
 
-data() {
-return {
-images: [],
-toggler: false,
-index: 0,
-}
-},
-mounted() {
+  data() {
+    return {
+      images: [],
+      previews: [],
+      toggler: false,
+      slide: 1,
+      Lazy: true
+    };
+  },
+  mounted() {
     this.importAll(
       require.context(
         "/static/assets/images/image-archive/gallery/",
@@ -32,17 +35,18 @@ mounted() {
         /\.(png|jpe?g|svg|gif)$/
       )
     );
-    
   },
   methods: {
     importAll(r) {
-      r.keys().forEach(key =>
-        this.images.push({ pathLong: r(key), pathShort: key })
-      );
+      r.keys().forEach((key) => this.images.push(r(key)));
     },
-  
-  }
-}
+    
+    openLightboxOnSlide: function (number) {
+      this.slide = number;
+      this.toggler = !this.toggler;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -53,7 +57,6 @@ mounted() {
   -webkit-column-width: 25%;
   -moz-column-width: 25%;
   column-width: 25%;
-  
 }
 .gallery .pics {
   -webkit-transition: all 350ms ease;
@@ -80,7 +83,7 @@ mounted() {
     -moz-column-width: 100%;
     column-width: 100%;
   }
-  .galleryCon{
+  .galleryCon {
     padding: 5px;
     margin: auto;
   }

@@ -36,37 +36,37 @@
       >
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/visual-content.png"
+          src="/assets/images/about/services/Visual-Content.jpg"
           alt="Creating-curating"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/creative-direction.png"
+          src="/assets/images/about/services/creative-direction.jpg"
           alt="creative-direction"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/filming.png"
+          src="/assets/images/about/services/filming.jpg"
           alt="filming"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/Lookbooks.png"
+          src="/assets/images/about/services/lookbooks.jpg"
           alt="Lookbooks-campaings"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/photography.png"
+          src="/assets/images/about/services/photography.jpg"
           alt="Photography"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/production.png"
+          src="/assets/images/about/services/production.jpg"
           alt="Production"
         />
         <img
           class="w-full h-full"
-          src="/assets/images/about/We can help with/Talent-development.png"
+          src="/assets/images/about/services/talent-development.jpg"
           alt="Talent Development"
         />
       </div>
@@ -74,13 +74,13 @@
     <div class="container p-20 max-w-7xl text-center mx-auto">
       <h4 class="text-5xl uppercase">HOW WE WORK?</h4>
       <p class="mt-10 space-y-4">
-        As believers of balance between personal & professional, we curate the
+        As believers of balance between personal and professional, we curate the
         intricacies and aesthetics that let you tell YOUR brand’s story, the
         best way possible. This, of course, involves a process of rigorous
         research by the team to understand the nitty-gritty and your brand’s
         core values. Following this, we put our minds to weaving a narrative
         that adheres to them. The next, and most crucial step becomes
-        transforming that story into stunning & compelling visuals. Planning
+        transforming that story into stunning and compelling visuals. Planning
         regarding the logistics, design, script, models, and the rest of the
         production starts as we break down our team into departments. <br />
         As a contemporary company with experience, we execute ‘best of both
@@ -147,7 +147,7 @@
       </div>
       <p>
         <span class="block mt-40 text-lg uppercase font-bold"
-          >ASPIRE & INSPIRE</span
+          >ASPIRE &amp; INSPIRE</span
         >
 
         We’re always looking for new sources of inspiration, feel free to reach
@@ -185,8 +185,7 @@ export default {
   methods: {
     scrollToTop() {
       let currentScroll = document.documentElement.scrollTop,
-        int = setInterval(frame, 6);
-
+        int = setInterval(frame, 1);
       function frame() {
         if (0 > currentScroll) clearInterval(int);
         else {

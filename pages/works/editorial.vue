@@ -1,6 +1,6 @@
 <template>
   <body>
-    <div class="">
+    <div>
       <!-- swiper1 -->
       <swiper
         style="height: 100vh;"
@@ -8,27 +8,32 @@
         :options="swiperOptionTop"
         ref="swiperTop"
       >
-        <swiper-slide
+        <swiper-slide 
           style="overflow-y: scroll;"
           v-for="image in images"
           :key="image.id"
           class="slide-1"
         >
-          <img :src="image.pathLong" />
+          <img @click="hide= !hide, reveal= !reveal" :src="image.pathLong" />
         </swiper-slide>
 
         <div
-          class=" fixed top-1/3 right-8 swiper-button-next swiper-button-white text-gray-500"
+          class="swiper-button-next swiper-button-black"
           slot="button-next"
         ></div>
         <div
-          class=" fixed top-1/3 left-4 swiper-button-prev swiper-button-black text-gray-500"
+          class="swiper-button-prev swiper-button-black"
           slot="button-prev"
         ></div>
       </swiper>
+      <div id="close" ><nuxt-link id="closeLink"
+      class="flex flex-row filter transition duration-300 ease-in-out hover:drop-shadow-2xl "
+      to="/works"><svg class="opacity-70" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 
+      </nuxt-link></div>
       <!-- swiper2 Thumbs -->
       <swiper
         class="swiper gallery-thumbs"
+        v-bind:class="{hide: hide, reveal: reveal}"
         :options="swiperOptionThumbs"
         ref="swiperThumbs"
       >
@@ -52,6 +57,8 @@ export default {
   },
   data() {
     return {
+      hide: false,
+      reveal: true,
       images: [],
       covers: [],
       swiperOption: {
@@ -119,6 +126,24 @@ export default {
 </script>
 
 <style scoped>
+#close{
+  width: 100vw;
+  z-index: 100;
+  position: fixed;
+  bottom: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+#close #closeLink{
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font: 15px;
+}
 .swiper.gallery-top {
   height: 70%;
   width: 100%;
@@ -128,6 +153,46 @@ export default {
   padding: 20px;
   position: fixed;
   bottom: 5vh;
+  width: 100%;
+  opacity: 1;
+}
+
+.hide{
+    box-sizing: border-box;
+  padding: 20px;
+  position: fixed;
+  bottom: 5vh;
+  width: 100%;
+  animation: hide 500ms ease-in 50ms 1 forwards;
+  
+}
+ @keyframes hide {
+  from{
+    opacity: 1;
+  transform: translateY(0);
+  }
+   to{
+    opacity: 0;
+  transform: translateY(40px);
+  }
+}
+.reveal{
+    box-sizing: border-box;
+  padding: 20px;
+  position: fixed;
+  bottom: 5vh;
+  width: 100%;
+  animation: reveal 400ms ease-in 0ms 1 forwards;}
+@keyframes reveal {
+  from{
+  opacity: 0;
+  transform: translateY(40px);
+  }
+   to{
+       opacity: 1;
+  transform: translateY(0);
+    
+  }
 }
 .swiper.gallery-thumbs .swiper-slide {
   width: 25%;
@@ -136,5 +201,18 @@ export default {
 }
 .swiper.gallery-thumbs .swiper-slide-active {
   opacity: 1;
+}
+@media (min-width: 991px) {
+ .swiper-button-next{
+right: 30px;
+}
+}
+@media (max-width: 480px){
+.swiper-button-next{
+transform: scale(.7);
+}
+.swiper-button-prev{
+  transform: scale(.7);
+}
 }
 </style>
