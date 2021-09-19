@@ -19,6 +19,7 @@
     </div>
 
     <LazyGrid id="feed" ref="feed" />
+    
   </div>
 </template>
 

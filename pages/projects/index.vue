@@ -1,11 +1,11 @@
 <template>
-  <div class="py-32 flex flex-wrap justify-center items-center text-center h-[100vh]">
+  <div class="py-32 flex flex-wrap justify-center items-center text-center h-[105vh]">
     <nuxt-link
       class="flex flex-col filter transition duration-300 ease-in-out hover:drop-shadow-2xl p-6"
-      to="/works/editorial">
-      <div class="w-[400px] transition duration-[400ms] ease-in hover:scale-75">
+      to="/projects/editorial">
+      <div class="transition duration-[400ms] ease-in hover:scale-75">
       <video muted autoplay loop class="vid">
-        <source src="/assets/images/Works/Editorial/Editorial.mp4" type="video/mp4" />
+        <source src="/assets/images/projects/EDITORIAL/Editorial.mp4" type="video/mp4" />
       </video>
       </div>
       <span class="uppercase p-6 text-xl filter drop-shadow-xl pt-6"
@@ -14,10 +14,10 @@
     </nuxt-link>
     <nuxt-link
       class="flex flex-col filter transition duration-200 ease-in hover:drop-shadow-2xl p-6"
-      to="/works/lifestyle">
-      <div class="w-[400px] transition duration-[400ms] ease-in hover:scale-75">
+      to="/projects/lifestyle">
+      <div class="transition duration-[400ms] ease-in hover:scale-75">
       <video muted autoplay loop class="vid">
-        <source src="/assets/images/Works/LIFESTYLE/Lifestyle.mp4" type="video/mp4" />
+        <source src="/assets/images/projects/LIFESTYLE/Lifestyle.mp4" type="video/mp4" />
       </video>
       </div>
       <span class="uppercase p-6 text-xl filter drop-shadow-2xl"
@@ -40,3 +40,12 @@ export default {
   }
 }
 </script>
+<style scoped>
+.vid{
+  width: 400px;
+}
+@media (max-width:480px) {
+  .vid{
+  width: 250px;}
+}
+</style>

@@ -67,16 +67,23 @@ export default {
  
   transform: scale(1.4);
 }
-.images:nth-child(5n) {
-  transform: scale(1.1);
+.images:nth-child(2n +1) {
+  transform: scale(1.2);
   margin: 100px 50px;
+  
 }
-.images:nth-child(2n) {
+.images:nth-child(3n) {
+  transform: scale(.8);
+  margin: 100px 50px;
+  
+}
+.images:nth-child(3n + 1) {
   transform: translateX(70px);
   position: relative;
 }
-.images:nth-child(3n + 1) {
+.images:nth-child(4n) {
   transform: translateY(70px);
+  transform: translateX(40px);
   position: relative;
 }
 .images:nth-child(1) {
