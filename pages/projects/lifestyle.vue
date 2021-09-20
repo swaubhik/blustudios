@@ -63,7 +63,7 @@ export default {
       images: [],
       covers: [],
       swiperOption: {
-      // lazy: true
+      lazy: true
       },
       swiperOptionTop: {
         observer: true,
