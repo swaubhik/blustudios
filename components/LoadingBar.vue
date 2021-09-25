@@ -53,10 +53,8 @@ export default {
 img{
 
 z-index: 100;
-}
-@media (max-width: 480px) {
-  img{
-    transform: scale(2);
-  }
+height: 100vh;
+object-fit: cover;
+transform: translateX(4px);
 }
 </style>

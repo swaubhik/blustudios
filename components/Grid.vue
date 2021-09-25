@@ -65,18 +65,25 @@ export default {
 
 .gallery .images:hover {
  
-  transform: scale(1.4);
+  transform: scale(1.3);
 }
-.images:nth-child(5n) {
-  transform: scale(1.1);
+.images:nth-child(2n +1) {
+  transform: scale(1.2);
   margin: 100px 50px;
+  
 }
-.images:nth-child(2n) {
+.images:nth-child(3n) {
+  transform: scale(.8);
+  margin: 100px 50px;
+  
+}
+.images:nth-child(3n + 1) {
   transform: translateX(70px);
   position: relative;
 }
-.images:nth-child(3n + 1) {
+.images:nth-child(4n) {
   transform: translateY(70px);
+  transform: translateX(40px);
   position: relative;
 }
 .images:nth-child(1) {
@@ -94,20 +101,29 @@ export default {
     width: 400px;
      padding: 50px 10px;
   }
-  .images:nth-child(5n) {
-  transform: scale(1.1);
-  margin: 50px 25px;
+  .images:nth-child(2n +1) {
+  transform: scale(1.2);
+  margin: 70px 30px;
+  
 }
-.images:nth-child(2n) {
+.images:nth-child(3n) {
+  transform: scale(.8);
+  margin: 70px 30px;
+  
+}
+.images:nth-child(3n + 1) {
   transform: translateX(50px);
   position: relative;
 }
-
-.images:nth-child(3n + 1) {
+.images:nth-child(4n) {
   transform: translateY(50px);
+  transform: translateX(30px);
   position: relative;
 }
-
+.images:nth-child(1) {
+  transform: translateY(-50px);
+  position: relative;
+}
 }
 @media (max-width: 480px) {
   .gallery {
@@ -125,17 +141,27 @@ export default {
      padding: 40px 0px;
      margin: auto;
   }
-  .images:nth-child(5n) {
-  transform: scale(1.1);
-  margin: 10px;
+  .images:nth-child(2n +1) {
+  transform: scale(1.2);
+  margin: 50px 20px;
+  
 }
-.images:nth-child(2n) {
-  transform: translateX(40px);
+.images:nth-child(3n) {
+  transform: scale(.8);
+  margin: 50px 30px;
+  
+}
+.images:nth-child(3n + 1) {
+  transform: translateX(30px);
   position: relative;
 }
-
+.images:nth-child(4n) {
+  transform: translateY(40px);
+  transform: translateX(20px);
+  position: relative;
+}
 .images:nth-child(1) {
-  transform: translateY(-70px);
+  transform: translateY(-50px);
   position: relative;
 }
 }

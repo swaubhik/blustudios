@@ -37,9 +37,9 @@
             <nuxt-link
               active-class="font-bold"
               class="hover:font-bold p-2"
-              to="/works"
+              to="/projects"
             >
-              Works
+              Projects
             </nuxt-link>
           </div>
           <div>
