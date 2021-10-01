@@ -1,29 +1,36 @@
 <template>
-  <div class="flex justify-center items-center mt-20 p-8">
-    <draggable class="gallery overflow-hidden lg:overflow-visible">
-      <img 
-        class="images my-10 md:p-4 mx-auto lg:px-8 py-12 m-10 sm:p-2"
+  <div >
+    <draggable class="gallery overflow-visible">
+      <div
+        class="
+        flex justify-center items-center
+          images
+        "
         v-for="image in images"
         :key="image.id"
-        :src="image.pathLong"
-        alt="Blu Studios"
-        style="width:62%;"     
-      />
+      >
+        <img
+          class="overflow-visible"
+          :src="image.pathLong"
+          alt="Blu Studios"
+          style="width:35%;"
+        />
+      </div>
     </draggable>
   </div>
 </template>
 
 <script>
-import draggable from 'vuedraggable';
+import draggable from "vuedraggable";
 
 export default {
   components: {
-    draggable
+    draggable,
   },
   name: "client",
   data() {
     return {
-      images: []
+      images: [],
     };
   },
 
@@ -39,130 +46,72 @@ export default {
 
   methods: {
     importAll(r) {
-      r.keys().forEach(key =>
+      r.keys().forEach((key) =>
         this.images.push({ pathLong: r(key), pathShort: key })
       );
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
 .gallery {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-  -webkit-column-width: 100%;
-  -moz-column-width: 100%;
-  column-width: 100%;
-  padding: 20px 12px;
-}
-.gallery .images {
-  -webkit-transition: all 500ms ease;
-  transition: all 800ms ease;
-  cursor: pointer;
   
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 15rem;
+  padding: 20px 12px;
+  padding-top: 12rem;
+}
+.gallery .images img {
+  -webkit-transition: all 800ms ease;
+  transition: all 800ms ease;
+  cursor: grab;
 }
 
-.gallery .images:hover {
- 
+.gallery .images img:hover {
+  transform: scale(2.8);
+  
+}
+.gallery .images:nth-child(4n){
+  transform: translate(-70px, 120px);
+}
+
+.gallery .images:nth-child(5n){
+  transform: translate(70px, -50px);
+}
+.gallery .images:nth-child(6n){
+  transform: translateY(70px) scale(.8);
+}
+.gallery .images:nth-child(7n){
   transform: scale(1.3);
-}
-.images:nth-child(2n +1) {
-  transform: scale(1.2);
-  margin: 100px 50px;
-  
-}
-.images:nth-child(3n) {
-  transform: scale(.8);
-  margin: 100px 50px;
-  
-}
-.images:nth-child(3n + 1) {
-  transform: translateX(70px);
-  position: relative;
-}
-.images:nth-child(4n) {
   transform: translateY(70px);
-  transform: translateX(40px);
-  position: relative;
 }
-.images:nth-child(1) {
-  transform: translateY(-50px);
-  position: relative;
+
+.gallery .images:nth-child(8n){
+  transform: translate(-50px, -90px);
+}
+.gallery .images:nth-child(9n){
+  transform: translateY(-60px) scale(1.5);
 }
 
 @media (max-width: 991px) {
-  .gallery {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-  }
-  .images {
-    width: 400px;
-     padding: 50px 10px;
-  }
-  .images:nth-child(2n +1) {
-  transform: scale(1.2);
-  margin: 70px 30px;
+ .gallery {
   
-}
-.images:nth-child(3n) {
-  transform: scale(.8);
-  margin: 70px 30px;
-  
-}
-.images:nth-child(3n + 1) {
-  transform: translateX(50px);
-  position: relative;
-}
-.images:nth-child(4n) {
-  transform: translateY(50px);
-  transform: translateX(30px);
-  position: relative;
-}
-.images:nth-child(1) {
-  transform: translateY(-50px);
-  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 10rem;
+  padding: 20px 12px;
+  padding-top: 8rem;
 }
 }
 @media (max-width: 480px) {
-  .gallery {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-    -webkit-column-width: 100%;
-    -moz-column-width: 100%;
-    column-width: 100%;
-  }
-  img{
-    width: 90%;
-  }
-   .images {
-     padding: 40px 0px;
-     margin: auto;
-  }
-  .images:nth-child(2n +1) {
-  transform: scale(1.2);
-  margin: 50px 20px;
+ .gallery {
   
-}
-.images:nth-child(3n) {
-  transform: scale(.8);
-  margin: 50px 30px;
-  
-}
-.images:nth-child(3n + 1) {
-  transform: translateX(30px);
-  position: relative;
-}
-.images:nth-child(4n) {
-  transform: translateY(40px);
-  transform: translateX(20px);
-  position: relative;
-}
-.images:nth-child(1) {
-  transform: translateY(-50px);
-  position: relative;
+  display: grid;
+  grid-template-columns: auto ;
+  grid-row-gap: 5rem;
+  padding: 20px 12px;
+  padding-top: 5rem;
 }
 }
 </style>

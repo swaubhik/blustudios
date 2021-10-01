@@ -9,11 +9,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@braks/revue-draggable": "^0.3.0",
+    "@vue/composition-api": "^1.2.2",
     "core-js": "^3.15.1",
     "fslightbox-vue": "^1.2.0",
     "nuxt": "^2.15.7",
     "swiper": "5.x",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-lottie": "^0.2.1",
     "vuedraggable": "^2.24.3"
   },
   "devDependencies": {

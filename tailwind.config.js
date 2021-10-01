@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: theme => ({
-        "image-hero": "url('/assets/images/image-archive/bg.png')",
+        "image-hero": "url('/assets/images/image-archive/bg.jpg')",
         "about-hero": "url('/assets/images/about/about-hero.jpg')"
       }),
       fontFamily: {

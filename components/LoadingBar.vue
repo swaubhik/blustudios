@@ -1,21 +1,33 @@
 <template>
   <div v-if="loading" class="loading-page">
     <div class="loading" >
-      <img src="/Welcome.gif" alt="">
+     <lottie :width="1024" :height="1024" :options="lottieOptions" v-on:animCreated="handleAnimation" />
     </div>
   </div>
 </template>
 <script>
+import lottie from 'vue-lottie/src/lottie.vue'
+import * as animationData from "~/static/Welcome.json";
 export default {
+  components: {
+        lottie
+    },
   data: () => ({
-    loading: false
+    
+    loading: false,
+    anim: null, // for saving the reference to the animation
+      lottieOptions: { animationData: animationData.default }
   }),
+  
   methods: {
     start() {
       this.loading = true;
     },
     finish() {
       this.loading = false;
+    },
+    handleAnimation: function (anim) {
+      this.anim = anim;
     }
   }
 };

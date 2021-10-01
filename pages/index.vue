@@ -4,7 +4,7 @@
       <video muted autoplay loop id="vid">
         <source src="/assets/images/home/home.mp4" type="video/mp4" />
       </video>
-      <span @click="goto" class="absolute bottom-[20px] z-50 animate-bounce">
+      <span @click="goto" class="absolute bottom-[20px] z-50 animate-bounce cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="44px"
@@ -28,12 +28,12 @@ export default {
   /*
    ** programmatically start the loader so we force the page to take x2seconds to load
    */
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-      setTimeout(() => this.$nuxt.$loading.finish(), 5500);
-    });
-  },
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     this.$nuxt.$loading.start();
+  //     setTimeout(() => this.$nuxt.$loading.finish(), 5500);
+  //   });
+  // },
   methods: {
     goto() {
       var element = document.querySelector("#feed");

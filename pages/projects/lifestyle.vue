@@ -68,7 +68,7 @@ export default {
       swiperOptionTop: {
         observer: true,
         observeParents: true,
-        loop: true,
+        loop: false,
         loopedSlides: 5, // looped slides should be the same
         spaceBetween: 10,
         navigation: {
@@ -79,7 +79,7 @@ export default {
       swiperOptionThumbs: {
         observer: true,
         observeParents: true,
-        loop: true,
+        loop: false,
         loopedSlides: 5, // looped slides should be the same
         spaceBetween: 10,
         centeredSlides: true,

@@ -1,12 +1,23 @@
 <template>
   <div class="relative">
     <div
-      class="relative h-[85vh] bg-about-hero bg-right bg-no-repeat bg-fixed bg-cover bg-black"
+      class="
+        relative
+        h-[85vh]
+        bg-about-hero bg-right bg-no-repeat bg-fixed bg-cover bg-black
+      "
     >
       <div
-        class="md:w-[590px] p-20 md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2"
+        class="
+          md:w-[590px]
+          p-20
+          md:absolute
+          md:right-4
+          md:top-1/2
+          md:-translate-y-1/2
+        "
       >
-        <h1 class=" uppercase text-7xl md:text-9xl font-extrabold">
+        <h1 class="uppercase text-7xl md:text-9xl font-extrabold">
           Show,
           <span class="text-6xl md:text-8xl block"
             ><span class="text-white">AND</span> tell</span
@@ -29,50 +40,8 @@
         Blu Studios has worked with over 100 brands, national and international
       </p>
     </div>
-    <div class="py-10 bg-black text-center">
-      <h3 class="uppercase text-3xl text-white">We can help you with:</h3>
-      <div
-        class="p-8 grid grid-cols-4 sm:grid-cols-none sm:grid-flow-col gap-4"
-      >
-        <img
-          class="w-full h-full"
-          src="/assets/images/about/services/Visual-Content.jpg"
-          alt="Creating-curating"
-        />
-        <img
-          class="w-full h-full"
-          src="/assets/images/about/services/creative-direction.jpg"
-          alt="creative-direction"
-        />
-        <img
-          class="w-full h-full"
-          src="/assets/images/about/services/filming.jpg"
-          alt="filming"
-        />
-        <img
-          class="w-full h-full"
-          src="/assets/images/about/services/lookbooks.jpg"
-          alt="Lookbooks-campaings"
-        />
-        <img
-          class="w-full h-full"
-          src="/assets/images/about/services/photography.jpg"
-          alt="Photography"
-        />
-        <img
-          class="w-full h-full"
-          src="/assets/images/about/services/production.jpg"
-          alt="Production"
-        />
-        <img
-          class="w-full h-full"
-          src="/assets/images/about/services/talent-development.jpg"
-          alt="Talent Development"
-        />
-      </div>
-    </div>
-    <div class="container p-20 max-w-7xl text-center mx-auto">
-      <h4 class="text-5xl uppercase">HOW WE WORK?</h4>
+    <div class="container p-20 max-w-7xl text-left mx-auto">
+      <h4 class="text-5xl uppercase font-bold">HOW WE WORK?</h4>
       <p class="mt-10 space-y-4">
         As believers of balance between personal and professional, we curate the
         intricacies and aesthetics that let you tell YOUR brand’s story, the
@@ -87,14 +56,30 @@
         worlds’ strategies that bring you original, more importantly, excellent
         quality work.
       </p>
+      
       <p>
-        <span class="block mt-40 text-lg uppercase font-bold"
+        <span class="block mt-40 text-5xl uppercase font-bold"
+          >ASPIRE &amp; INSPIRE</span
+        >
+
+        We’re always looking for new sources of inspiration, feel free to reach
+        out to us for sharing ideas, or even conversation about art over a cup
+        of coffee. At the end of the day, it’s always delightful to have a
+        community.
+        <br />
+        Contact Us/ connect with our team
+      </p>
+      <p>
+        <span class="block mt-40 text-lg  uppercase font-bold"
           >STAY CONNECTED</span
         >
         Want to be the first one to know about our work? Follow us on:
       </p>
-      <div class="my-8 flex space-x-4 justify-center items-center">
-        <a href="https://www.instagram.com/blustudios_official/?utm_medium=copy_link" target="_blank">
+      <div class="my-5 flex space-x-4 justify-left items-center">
+        <a
+          href="https://www.instagram.com/blustudios_official/?utm_medium=copy_link"
+          target="_blank"
+        >
           <svg
             width="40"
             height="40"
@@ -145,20 +130,8 @@
           </svg>
         </a>
       </div>
-      <p>
-        <span class="block mt-40 text-lg uppercase font-bold"
-          >ASPIRE &amp; INSPIRE</span
-        >
-
-        We’re always looking for new sources of inspiration, feel free to reach
-        out to us for sharing ideas, or even conversation about art over a cup
-        of coffee. At the end of the day, it’s always delightful to have a
-        community.
-        <br />
-        Contact Us/ connect with our team
-      </p>
     </div>
-    <div class="absolute bottom-10 right-10">
+    <div class="absolute bottom-[34rem] right-10">
       <button @click="scrollToTop">
         <svg
           width="40"
@@ -178,18 +151,61 @@
         </svg>
       </button>
     </div>
+    <div class="py-14 bg-black text-center">
+      <h3 class="uppercase p-6 text-3xl text-white">We can help you with:</h3>
+      <div
+        class="p-8 grid grid-cols-4 sm:grid-cols-none sm:grid-flow-col gap-4"
+      >
+        <img
+          class="w-full h-full transform hover:opacity-80 ease-linear"
+          src="/assets/images/about/services/Visual-Content.jpg"
+          alt="Creating-curating"
+        />
+        <img
+          class="w-full h-full"
+          src="/assets/images/about/services/creative-direction.jpg"
+          alt="creative-direction"
+        />
+        <img
+          class="w-full h-full"
+          src="/assets/images/about/services/filming.jpg"
+          alt="filming"
+        />
+        <img
+          class="w-full h-full"
+          src="/assets/images/about/services/lookbooks.jpg"
+          alt="Lookbooks-campaings"
+        />
+        <img
+          class="w-full h-full"
+          src="/assets/images/about/services/photography.jpg"
+          alt="Photography"
+        />
+        <img
+          class="w-full h-full"
+          src="/assets/images/about/services/production.jpg"
+          alt="Production"
+        />
+        <img
+          class="w-full h-full"
+          src="/assets/images/about/services/talent-development.jpg"
+          alt="Talent Development"
+        />
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
   head: {
-    title: 'About Us',
+    title: "About Us",
     meta: [
       {
-        hid: 'About Us - Blu Studios',
-        name: 'About Us',
-        content: 'We define the essence of your brand through storytelling. Every brand has an identity and a story is the breath that infuses life into it. Here at Blu Studios, we create a visually dynamic space that allows these stories to come alive.'
-      }
+        hid: "About Us - Blu Studios",
+        name: "About Us",
+        content:
+          "We define the essence of your brand through storytelling. Every brand has an identity and a story is the breath that infuses life into it. Here at Blu Studios, we create a visually dynamic space that allows these stories to come alive.",
+      },
     ],
   },
   methods: {
@@ -203,7 +219,7 @@ export default {
           document.documentElement.scrollTop = currentScroll;
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
