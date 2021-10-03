@@ -1,46 +1,7 @@
 <template>
   <div class="relative">
-    <div
-      class="
-        relative
-        h-[85vh]
-        bg-about-hero bg-right bg-no-repeat bg-fixed bg-cover bg-black
-      "
-    >
-      <div
-        class="
-          md:w-[590px]
-          p-20
-          md:absolute
-          md:right-4
-          md:top-1/2
-          md:-translate-y-1/2
-        "
-      >
-        <h1 class="uppercase text-7xl md:text-9xl font-extrabold">
-          Show,
-          <span class="text-6xl md:text-8xl block"
-            ><span class="text-white">AND</span> tell</span
-          >
-        </h1>
-        <p class="text-white md:block pt-20">
-          We define the essence of your brand through storytelling.
-          <br />
-          Every brand has an identity and a story is the breath that infuses
-          life into it. Here at Blu Studios, we create a visually dynamic space
-          that allows these stories to come alive.
-        </p>
-      </div>
-    </div>
-    <div class="text-center p-8 space-y-2">
-      <h2 class="font-bold text-md">
-        Creating &amp; Curating since 11 years 9 months 10 days
-      </h2>
-      <p class="text-sm">
-        Blu Studios has worked with over 100 brands, national and international
-      </p>
-    </div>
-    <div class="container p-20 max-w-7xl text-left mx-auto">
+    <ShowNT/>
+    <div class="container p-20 max-w-7xl text-left mt-20">
       <h4 class="text-5xl uppercase font-bold">HOW WE WORK?</h4>
       <p class="mt-10 space-y-4">
         As believers of balance between personal and professional, we curate the
@@ -57,12 +18,9 @@
         quality work.
       </p>
       
-      <p>
-        <span class="block mt-40 text-5xl uppercase font-bold"
-          >ASPIRE &amp; INSPIRE</span
-        >
-
-        We’re always looking for new sources of inspiration, feel free to reach
+      <span class="block mt-40 text-5xl uppercase font-bold"
+          >ASPIRE &amp; INSPIRE</span>
+      <p class="mt-10 space-y-4"> We’re always looking for new sources of inspiration, feel free to reach
         out to us for sharing ideas, or even conversation about art over a cup
         of coffee. At the end of the day, it’s always delightful to have a
         community.
@@ -130,8 +88,9 @@
           </svg>
         </a>
       </div>
+      
     </div>
-    <div class="absolute bottom-[34rem] right-10">
+    <div class="p-10 pt-0 flex justify-end">
       <button @click="scrollToTop">
         <svg
           width="40"
@@ -151,48 +110,50 @@
         </svg>
       </button>
     </div>
-    <div class="py-14 bg-black text-center">
-      <h3 class="uppercase p-6 text-3xl text-white">We can help you with:</h3>
+    <div class="py-14 bg-black text-left">
+      <h3 class="uppercase p-6 pl-8 text-3xl text-white">We can help you with:</h3>
       <div
-        class="p-8 grid grid-cols-4 sm:grid-cols-none sm:grid-flow-col gap-4"
+        class="p-8 grid grid-cols-3 sm:grid-cols-none sm:grid-flow-col gap-4"
       >
+        <img
+          class="w-full h-full transform hover:opacity-80 ease-linear"
+          src="/assets/images/about/services/photography.jpg"
+          alt="Photography"
+        />
+        <img
+          class="w-full h-full transform hover:opacity-80 ease-linear"
+          src="/assets/images/about/services/filming.jpg"
+          alt="filming"
+        />
+        <img
+          class="w-full h-full transform hover:opacity-80 ease-linear"
+          src="/assets/images/about/services/creative-direction.jpg"
+          alt="creative-direction"
+        />
         <img
           class="w-full h-full transform hover:opacity-80 ease-linear"
           src="/assets/images/about/services/Visual-Content.jpg"
           alt="Creating-curating"
         />
         <img
-          class="w-full h-full"
-          src="/assets/images/about/services/creative-direction.jpg"
-          alt="creative-direction"
+          class="w-full h-full transform hover:opacity-80 ease-linear"
+          src="/assets/images/about/services/production.jpg"
+          alt="Production"
         />
+        
         <img
-          class="w-full h-full"
-          src="/assets/images/about/services/filming.jpg"
-          alt="filming"
-        />
-        <img
-          class="w-full h-full"
+          class="w-full h-full transform hover:opacity-80 ease-linear"
           src="/assets/images/about/services/lookbooks.jpg"
           alt="Lookbooks-campaings"
         />
         <img
-          class="w-full h-full"
-          src="/assets/images/about/services/photography.jpg"
-          alt="Photography"
-        />
-        <img
-          class="w-full h-full"
-          src="/assets/images/about/services/production.jpg"
-          alt="Production"
-        />
-        <img
-          class="w-full h-full"
+          class="w-full h-full transform hover:opacity-80 ease-linear"
           src="/assets/images/about/services/talent-development.jpg"
           alt="Talent Development"
         />
       </div>
     </div>
+    
   </div>
 </template>
 <script>
