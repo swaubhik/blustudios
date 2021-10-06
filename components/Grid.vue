@@ -1,6 +1,6 @@
 <template>
   <div >
-    <draggable class="gallery overflow-visible">
+    <draggable class="gallery overflow-hidden">
       <div
         class="
         flex justify-center items-center
@@ -13,7 +13,7 @@
           class="overflow-visible"
           :src="image.pathLong"
           alt="Blu Studios"
-          style="width:35%;"
+          style="width:30%;"
         />
       </div>
     </draggable>
@@ -69,8 +69,11 @@ export default {
 }
 
 .gallery .images img:hover {
-  transform: scale(2.8);
+  transform: scale(2.5);
   
+}
+.gallery .images:nth-child(1){
+  transform: translateY(-60px);
 }
 .gallery .images:nth-child(4n){
   transform: translate(-70px, 120px);

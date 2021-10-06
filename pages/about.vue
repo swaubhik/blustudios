@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <ShowNT/>
-    <div class="container p-20 max-w-7xl text-left mt-20">
+    <div class="container p-5 sm:p-10 lg:p-20 max-w-7xl text-left mt-20">
       <h4 class="text-5xl uppercase font-bold">HOW WE WORK?</h4>
       <p class="mt-10 space-y-4">
         As believers of balance between personal and professional, we curate the
@@ -115,16 +115,21 @@
       <div
         class="p-8 grid grid-cols-3 sm:grid-cols-none sm:grid-flow-col gap-4"
       >
+      <div class="relative">
+        <span class="text-white text-xs absolute z-50 top-3">Photography</span>
         <img
           class="w-full h-full transform hover:opacity-80 ease-linear"
           src="/assets/images/about/services/photography.jpg"
           alt="Photography"
         />
+        </div>
+        <div class="relative">
+        <span class="text-white text-[1rem] absolute bottom-3 z-50 left-1">Photography</span>
         <img
           class="w-full h-full transform hover:opacity-80 ease-linear"
           src="/assets/images/about/services/filming.jpg"
           alt="filming"
-        />
+        /> </div>
         <img
           class="w-full h-full transform hover:opacity-80 ease-linear"
           src="/assets/images/about/services/creative-direction.jpg"

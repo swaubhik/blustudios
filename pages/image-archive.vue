@@ -2,7 +2,7 @@
   <div class=" flex flex-col justify-center items-center  m-0 p-0">
     
       <div class="pt-[10rem] pb-[5.5rem] w-[100%] text-center bg-cover bg-no-repeat bg-bottom opacity-90 bg-image-hero">
-        <h2 class="font-extrabold text-white text-[5rem] translate-y-[10px] uppercase">
+        <h2 class="font-extrabold text-white text-5xl sm:text-[5rem] translate-y-[10px] uppercase">
           Image Archive
         </h2>
     </div>

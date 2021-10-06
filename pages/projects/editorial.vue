@@ -2,7 +2,7 @@
   <body>
     <div>
       <!-- swiper1 -->
-      <swiper
+      <swiper 
         style="height: 100vh;"
         class="swiper gallery-top"
         :options="swiperOptionTop"
@@ -120,7 +120,7 @@ export default {
       r.keys().forEach(key =>
         this.covers.push({ pathLong: r(key), pathShort: key })
       );
-    }
+    },
   }
 };
 </script>
