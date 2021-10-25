@@ -1,10 +1,13 @@
 <template>
-  <div >
+  <div>
     <div class="flex justify-center w-full h-screen bg-black">
       <video muted autoplay loop id="vid">
         <source src="/assets/images/home/home.mp4" type="video/mp4" />
       </video>
-      <span @click="goto" class="absolute bottom-[20px] z-50 animate-bounce cursor-pointer">
+      <span
+        @click="goto"
+        class="absolute bottom-[20px] z-50 animate-bounce cursor-pointer"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="44px"
@@ -18,26 +21,49 @@
       </span>
     </div>
 
-    <LazyGrid id="feed" ref="feed" />
-    
+    <div
+      v-bind:class="{ hide: hide }"
+      @click="hide = !hide"
+      class="
+        fixed
+        top-0
+        flex justify-center items-center
+        z-[1000]
+        h-[100vh]
+        w-[100vw]
+        bg-opacity-50 bg-black
+        text-white
+      "
+    >
+      <h2 class="text-3xl font-bold">Drag to shuffle images</h2>
+    </div>
+
+    <LazyGrid id="feed" class="hidden lg:block" ref="feed" />
+    <LazyGridsmall id="feeds" class="visible lg:hidden" ref="feeds" />
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      hide: true,
+    };
+  },
   /*
    ** programmatically start the loader so we force the page to take x2seconds to load
    */
-  // mounted() {
-  //   this.$nextTick(() => {
-  //     this.$nuxt.$loading.start();
-  //     setTimeout(() => this.$nuxt.$loading.finish(), 5500);
-  //   });
-  // },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 5500);
+    });
+  },
   methods: {
     goto() {
       var element = document.querySelector("#feed");
       var top = element.offsetTop;
+      this.hide = false;
 
       window.scrollTo({ top: top, behavior: "smooth" });
     },
@@ -45,8 +71,12 @@ export default {
 };
 </script>
 <style scoped>
-#vid{
+#vid {
   object-fit: cover;
   width: 100%;
+}
+.hide {
+  display: none;
+  transition: all 400ms;
 }
 </style>

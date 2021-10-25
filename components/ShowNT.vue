@@ -72,7 +72,7 @@
           lg:text-[32px]
         "
       >
-        Creating &amp; Curating since
+       &nbsp; Creating &amp; Curating since
       </h2>
       <div class="flex flex-row">
         <div class="flex flex-col justify-center items-center">

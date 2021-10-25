@@ -69,7 +69,7 @@ export default {
 }
 
 .gallery .images img:hover {
-  transform: scale(2.5);
+  transform: scale(2.2);
   
 }
 .gallery .images:nth-child(1){
@@ -95,26 +95,5 @@ export default {
 }
 .gallery .images:nth-child(9n){
   transform: translateY(-60px) scale(1.5);
-}
-
-@media (max-width: 991px) {
- .gallery {
-  
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-row-gap: 10rem;
-  padding: 20px 12px;
-  padding-top: 8rem;
-}
-}
-@media (max-width: 480px) {
- .gallery {
-  
-  display: grid;
-  grid-template-columns: auto ;
-  grid-row-gap: 5rem;
-  padding: 20px 12px;
-  padding-top: 5rem;
-}
 }
 </style>

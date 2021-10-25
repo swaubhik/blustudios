@@ -2,7 +2,7 @@
   <div class="relative">
     <ShowNT/>
     <div class="container p-5 sm:p-10 lg:p-20 max-w-7xl text-left mt-20">
-      <h4 class="text-5xl uppercase font-bold">HOW WE WORK?</h4>
+      <h4 class="text-[32px] sm:text-5xl uppercase font-bold">HOW WE WORK?</h4>
       <p class="mt-10 space-y-4">
         As believers of balance between personal and professional, we curate the
         intricacies and aesthetics that let you tell YOUR brand’s story, the
@@ -18,17 +18,20 @@
         quality work.
       </p>
       
-      <span class="block mt-40 text-5xl uppercase font-bold"
+      <span class="block mt-24 sm:mt-40 text-[32px] sm:text-5xl uppercase font-bold"
           >ASPIRE &amp; INSPIRE</span>
       <p class="mt-10 space-y-4"> We’re always looking for new sources of inspiration, feel free to reach
         out to us for sharing ideas, or even conversation about art over a cup
         of coffee. At the end of the day, it’s always delightful to have a
         community.
-        <br />
-        Contact Us/ connect with our team
-      </p>
+        </p>
+        <p class="font-bold">
+          <br>
+        Contact Us/ connect with our team: </p>
+        <p>contact@blustudios.in</p>
+      
       <p>
-        <span class="block mt-40 text-lg  uppercase font-bold"
+        <span class="block mt-24 sm:mt-40 py-3 text-lg  uppercase font-bold"
           >STAY CONNECTED</span
         >
         Want to be the first one to know about our work? Follow us on:
@@ -110,52 +113,22 @@
         </svg>
       </button>
     </div>
-    <div class="py-14 bg-black text-left">
-      <h3 class="uppercase p-6 pl-8 text-3xl text-white">We can help you with:</h3>
-      <div
-        class="p-8 grid grid-cols-3 sm:grid-cols-none sm:grid-flow-col gap-4"
-      >
-      <div class="relative">
-        <span class="text-white text-xs absolute z-50 top-3">Photography</span>
-        <img
-          class="w-full h-full transform hover:opacity-80 ease-linear"
-          src="/assets/images/about/services/photography.jpg"
-          alt="Photography"
-        />
-        </div>
-        <div class="relative">
-        <span class="text-white text-[1rem] absolute bottom-3 z-50 left-1">Photography</span>
-        <img
-          class="w-full h-full transform hover:opacity-80 ease-linear"
-          src="/assets/images/about/services/filming.jpg"
-          alt="filming"
-        /> </div>
-        <img
-          class="w-full h-full transform hover:opacity-80 ease-linear"
-          src="/assets/images/about/services/creative-direction.jpg"
-          alt="creative-direction"
-        />
-        <img
-          class="w-full h-full transform hover:opacity-80 ease-linear"
-          src="/assets/images/about/services/Visual-Content.jpg"
-          alt="Creating-curating"
-        />
-        <img
-          class="w-full h-full transform hover:opacity-80 ease-linear"
-          src="/assets/images/about/services/production.jpg"
-          alt="Production"
-        />
-        
-        <img
-          class="w-full h-full transform hover:opacity-80 ease-linear"
-          src="/assets/images/about/services/lookbooks.jpg"
-          alt="Lookbooks-campaings"
-        />
-        <img
-          class="w-full h-full transform hover:opacity-80 ease-linear"
-          src="/assets/images/about/services/talent-development.jpg"
-          alt="Talent Development"
-        />
+    <div class="py-2 bg-black text-left sm:text-center">
+      <h3 class="p-4 sm:p-16 text-[14px] sm:text-[30px] uppercase font-bold text-white">We can help you with</h3>
+      
+      <div class="flex justify-center items-center w-full px-3 sm:px-10 bg-black">
+      <div class="p-1 sm:p-8">
+      <video muted autoplay loop id="vid">
+        <source src="/assets/images/about/services/1-photography.mp4" type="video/mp4" />
+      </video> </div>
+       <div class="p-1 sm:p-8">
+      <video muted autoplay loop id="vid">
+        <source src="/assets/images/about/services/2-fashion-films.mp4" type="video/mp4" />
+      </video></div>
+       <div class="p-1 sm:p-8">
+      <video muted autoplay loop id="vid">
+        <source src="/assets/images/about/services/3-celebrities.mp4" type="video/mp4" />
+      </video></div>
       </div>
     </div>
     
