@@ -1,11 +1,47 @@
 <template>
-  <div >
+  <div class="relative">
+    <div class="relative text-[14px]">
+      
+      <div
+        class="info absolute top-8 right-4 sm:right-10 sm:top-12 opacity-50"
+      >
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.1961 1.09824C5.67351 1.04395 1.15257 5.47688 1.09829 10.9995C1.04401 16.522 5.47694 21.043 10.9995 21.0973C16.5221 21.1516 21.043 16.7186 21.0973 11.196C21.1516 5.67346 16.7187 1.15252 11.1961 1.09824Z"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.0585 15.0975L11.0978 11.0977"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.1371 7.0979L11.1271 7.0978"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <span class="span absolute top-8 right-10 sm:right-16 sm:top-12"
+        >Drag any image to shuffle</span
+      >
+    </div>
     <draggable class="gallery overflow-hidden">
       <div
-        class="
-        flex justify-center items-center
-          images
-        "
+        class="flex justify-center items-center images"
         v-for="image in images"
         :key="image.id"
       >
@@ -13,7 +49,7 @@
           class="overflow-visible"
           :src="image.pathLong"
           alt="Blu Studios"
-          style="width:30%;"
+          style="width: 30%"
         />
       </div>
     </draggable>
@@ -54,8 +90,22 @@ export default {
 };
 </script>
 <style scoped>
-.gallery {
+.span {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 400ms ease-in;
+}
+.info{
   
+  transition: all 400ms ease-in;
+}
+
+.info:hover + .span{
+  transform: translateX(-10px);
+ opacity: 100;
+}
+
+.gallery {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-row-gap: 15rem;
@@ -70,30 +120,106 @@ export default {
 
 .gallery .images img:hover {
   transform: scale(2.2);
-  
 }
-.gallery .images:nth-child(1){
+.gallery .images:nth-child(1) {
   transform: translateY(-60px);
 }
-.gallery .images:nth-child(4n){
+.gallery .images:nth-child(4n) {
   transform: translate(-70px, 120px);
 }
 
-.gallery .images:nth-child(5n){
+.gallery .images:nth-child(5n) {
   transform: translate(70px, -50px);
 }
-.gallery .images:nth-child(6n){
-  transform: translateY(70px) scale(.8);
+.gallery .images:nth-child(6n) {
+  transform: translateY(70px) scale(0.8);
 }
-.gallery .images:nth-child(7n){
+.gallery .images:nth-child(7n) {
   transform: scale(1.3);
   transform: translateY(70px);
 }
 
-.gallery .images:nth-child(8n){
+.gallery .images:nth-child(8n) {
   transform: translate(-50px, -90px);
 }
-.gallery .images:nth-child(9n){
+.gallery .images:nth-child(9n) {
   transform: translateY(-60px) scale(1.5);
+}
+
+@media (max-width: 991px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 12rem;
+    grid-column-gap: 6rem;
+    padding: 20px 12px;
+    padding-top: 8rem;
+  }
+
+  .gallery .images:nth-child(1) {
+    transform: translateY(-20px) scale(1.2);
+  }
+  .gallery .images:nth-child(4n) {
+    transform: translate(-40px, 60px);
+  }
+
+  .gallery .images:nth-child(5n) {
+    transform: translate(40px, -30px);
+  }
+  .gallery .images:nth-child(6n) {
+    transform: translateY(40px) scale(1.4);
+  }
+  .gallery .images:nth-child(7n) {
+    transform: scale(1.3);
+    transform: translateY(40px);
+  }
+  .gallery .images:nth-child(8n) {
+    transform: translate(-60px, -50px);
+  }
+  .gallery .images:nth-child(9n) {
+    transform: translateY(-20px) scale(1.5);
+  }
+}
+@media (max-width: 480px) {
+  .images img {
+    transform: scale(1.4);
+  }
+  .gallery .images img:hover {
+    transform: scale(2.2);
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: auto;
+
+    padding: 20px 15px;
+    padding-top: 5rem;
+  }
+
+  .gallery .images:nth-child(1) {
+    transform: translate(-60px, 70px);
+  }
+  .gallery .images:nth-child(2) {
+    transform: translate(40px, 10px);
+  }
+  .gallery .images:nth-child(4n) {
+    transform: translate(-40px, 60px);
+  }
+
+  .gallery .images:nth-child(5n) {
+    transform: translate(0px, -30px);
+  }
+  .gallery .images:nth-child(6n) {
+    transform: translatex(20px) scale(1);
+  }
+  .gallery .images:nth-child(7n) {
+    transform: scale(1.3);
+    transform: translate(50px, 30px);
+  }
+  .gallery .images:nth-child(8n) {
+    transform: translate(-60px, -50px);
+  }
+  .gallery .images:nth-child(9n) {
+    transform: translatex(-20px) scale(0.8);
+  }
 }
 </style>

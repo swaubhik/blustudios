@@ -21,25 +21,10 @@
       </span>
     </div>
 
-    <div
-      v-bind:class="{ hide: hide }"
-      @click="hide = !hide"
-      class="
-        fixed
-        top-0
-        flex justify-center items-center
-        z-[1000]
-        h-[100vh]
-        w-[100vw]
-        bg-opacity-50 bg-black
-        text-white
-      "
-    >
-      <h2 class="text-3xl font-bold">Drag to shuffle images</h2>
-    </div>
+    
 
-    <LazyGrid id="feed" class="hidden lg:block" ref="feed" />
-    <LazyGridsmall id="feeds" class="visible lg:hidden" ref="feeds" />
+    <LazyGrid id="feed" ref="feed" />
+    
   </div>
 </template>
 
@@ -53,12 +38,12 @@ export default {
   /*
    ** programmatically start the loader so we force the page to take x2seconds to load
    */
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-      setTimeout(() => this.$nuxt.$loading.finish(), 5500);
-    });
-  },
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     this.$nuxt.$loading.start();
+  //     setTimeout(() => this.$nuxt.$loading.finish(), 5500);
+  //   });
+  // },
   methods: {
     goto() {
       var element = document.querySelector("#feed");

@@ -3,7 +3,7 @@
     <nuxt-link
       class="flex flex-col filter transition duration-300 ease-in-out hover:drop-shadow-2xl p-6"
       to="/projects/editorial">
-      <div class="transition duration-[400ms] ease-in hover:scale-75">
+      <div class="transition duration-[800ms] ease-in-out  hover:scale-75">
       <video muted autoplay loop class="vid">
         <source src="/assets/images/projects/EDITORIAL/Editorial.mp4" type="video/mp4" />
       </video>
@@ -15,7 +15,7 @@
     <nuxt-link
       class="flex flex-col filter transition duration-200 ease-in hover:drop-shadow-2xl p-6"
       to="/projects/lifestyle">
-      <div class="transition duration-[400ms] ease-in hover:scale-75">
+      <div class="transition duration-[800ms] ease-in-out hover:scale-75">
       <video muted autoplay loop class="vid">
         <source src="/assets/images/projects/LIFESTYLE/Lifestyle.mp4" type="video/mp4" />
       </video>
