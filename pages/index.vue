@@ -22,8 +22,45 @@
     </div>
 
     
-
+    <div
+        class="info sticky flex items-end justify-end top-12 right-4 sm:right-10 sm:top-14 opacity-50"
+      >
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.1961 1.09824C5.67351 1.04395 1.15257 5.47688 1.09829 10.9995C1.04401 16.522 5.47694 21.043 10.9995 21.0973C16.5221 21.1516 21.043 16.7186 21.0973 11.196C21.1516 5.67346 16.7187 1.15252 11.1961 1.09824Z"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.0585 15.0975L11.0978 11.0977"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.1371 7.0979L11.1271 7.0978"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+          
+      <span class="span absolute top-12 right-10 sm:right-16 sm:top-14"
+        >Drag any image to shuffle</span
+      >
+    </div>
     <LazyGrid id="feed" ref="feed" />
+    <!-- <LazyGridnew id="feed" ref="feed" /> -->
     
   </div>
 </template>
@@ -38,12 +75,12 @@ export default {
   /*
    ** programmatically start the loader so we force the page to take x2seconds to load
    */
-  // mounted() {
-  //   this.$nextTick(() => {
-  //     this.$nuxt.$loading.start();
-  //     setTimeout(() => this.$nuxt.$loading.finish(), 5500);
-  //   });
-  // },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 5500);
+    });
+  },
   methods: {
     goto() {
       var element = document.querySelector("#feed");
@@ -60,8 +97,5 @@ export default {
   object-fit: cover;
   width: 100%;
 }
-.hide {
-  display: none;
-  transition: all 400ms;
-}
+
 </style>

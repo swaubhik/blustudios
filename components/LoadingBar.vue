@@ -1,7 +1,7 @@
 <template>
   <div v-if="loading" class="loading-page">
     <div class="loading" >
-     <lottie :width="1024" :height="1024" :options="lottieOptions" v-on:animCreated="handleAnimation" />
+     <lottie class="lottie" :width="1024" :height="1024" :options="lottieOptions" v-on:animCreated="handleAnimation" />
     </div>
   </div>
 </template>
@@ -62,11 +62,11 @@ export default {
     opacity: 0;
   }
 }
-img{
+.lottie{
 
 z-index: 100;
 height: 100vh;
 object-fit: cover;
-transform: translateX(4px);
+transform: translateX(8px);
 }
 </style>

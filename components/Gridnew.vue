@@ -3,7 +3,7 @@
     <div class="relative text-[14px]">
       
       <div
-        class="info sticky top-12 right-4 sm:right-10 sm:top-14 opacity-50"
+        class="info absolute top-12 right-4 sm:right-10 sm:top-14 opacity-50"
       >
         <svg
           width="23"
@@ -36,20 +36,18 @@
         </svg>
       </div>
       <span class="span absolute top-12 right-10 sm:right-16 sm:top-14"
-        >Drag any image to shuffle</span
+        >Drag images to shuffle</span
       >
     </div>
-    <draggable class="gallery overflow-hidden">
-      <div
-        class="flex justify-center items-center images"
-        v-for="image in images"
-        :key="image.id"
-      >
+    <draggable class="gallery">
+        <div v-for="image in images"
+        :key="image.id" class="flex flex-col justify-center items-center images"> 
         <img
-          class="overflow-visible"
+        
+          class=""
           :src="image.pathLong"
           :alt="image.pathShort"
-          style="width: 25%"
+          style="width: 30%"
         />
       </div>
     </draggable>
@@ -90,6 +88,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .span {
   opacity: 0;
   transform: translateX(0);
@@ -104,81 +103,105 @@ export default {
   transform: translateX(-10px);
  opacity: 100;
 }
-
 .gallery {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-row-gap: 15rem;
-  padding: 20px 12px;
-  padding-top: 12rem;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  
+  -webkit-column-width: 25%;
+  -moz-column-width: 30%;
+  column-width: 30%;
+  padding: 20px 30px;
+    padding-top: 4rem;
+}
+.images{
+  page-break-inside: avoid;
+  padding: 140px 10px;
 }
 .gallery .images img {
-  -webkit-transition: all 800ms ease;
-  transition: all 800ms ease;
-  cursor: grab;
+  page-break-inside: avoid;
+  -webkit-transition: all 350ms ease;
+  transition: all 400ms ease-in;
+  cursor: pointer;
+  
+}
+.gallery .images img:hover {
+  page-break-inside: avoid;
+  transform: scale(2);
 }
 
 .gallery .images img:hover {
-  transform: scale(2);
+  transform: scale(2.2);
 }
 .gallery .images:nth-child(1) {
   transform: translateY(-60px);
 }
+
 .gallery .images:nth-child(4n) {
   transform: translate(-70px, 120px);
 }
 
 .gallery .images:nth-child(5n) {
-  transform: translate(70px, -50px) scale(0.8);
+  transform: translate(70px, -50px);
 }
 .gallery .images:nth-child(6n) {
-  transform: translateY(70px) ;
+  transform: translateY(70px) scale(0.8);
 }
 .gallery .images:nth-child(7n) {
   transform: scale(1.3);
-  transform: translateY(70px) scale(1.3);
+  transform: translateY(70px);
 }
 
 .gallery .images:nth-child(8n) {
-  transform: translate(-50px, -90px);
+  transform: translate(-50px, 60px);
 }
 .gallery .images:nth-child(9n) {
   transform: translateY(-60px) scale(1.2);
 }
 
 @media (max-width: 991px) {
-  .gallery {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-row-gap: 12rem;
-    grid-column-gap: 6rem;
-    padding: 20px 12px;
-    padding-top: 8rem;
-  }
+ .gallery {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  
+  -webkit-column-width: 25%;
+  -moz-column-width: 30%;
+  column-width: 30%;
+  padding: 20px 25px;
+    padding-top: 6rem;
+}
+
+  .images{
+  page-break-inside: avoid;
+  padding: 80px 10px;
+}
 
   .gallery .images:nth-child(1) {
-    transform: translateY(-20px) scale(1.2);
-  }
-  .gallery .images:nth-child(4n) {
-    transform: translate(-40px, 60px);
-  }
+  transform: translateY(-60px);
+}
 
-  .gallery .images:nth-child(5n) {
-    transform: translate(40px, -30px) scale(1.2);
-  }
-  .gallery .images:nth-child(6n) {
-    transform: translateY(40px) ;
-  }
-  .gallery .images:nth-child(7n) {
-    transform: scale(1.3);
-    transform: translateY(40px) scale(.8);
-  }
-  .gallery .images:nth-child(8n) {
-    transform: translate(-60px, -50px);
-  }
-  .gallery .images:nth-child(9n) {
-    transform: translateY(-20px) scale(1.2);
-  }
+.gallery .images:nth-child(4n) {
+  transform: translate(-70px, 120px);
+}
+
+.gallery .images:nth-child(5n) {
+  transform: translate(70px, -50px);
+}
+.gallery .images:nth-child(6n) {
+  transform: translateY(70px) scale(0.8);
+}
+.gallery .images:nth-child(7n) {
+  transform: scale(1.3);
+  transform: translateY(70px);
+}
+
+.gallery .images:nth-child(8n) {
+  transform: translate(-50px, 60px);
+}
+.gallery .images:nth-child(9n) {
+  transform: translateY(-60px) scale(1.2);
+}
 }
 @media (max-width: 480px) {
   .images img {
@@ -206,20 +229,21 @@ export default {
   }
 
   .gallery .images:nth-child(5n) {
-    transform: translate(0px, -30px) scale(1.2);
+    transform: translate(0px, -30px);
   }
   .gallery .images:nth-child(6n) {
-    transform: translatex(20px) ;
+    transform: translatex(20px) scale(1);
   }
   .gallery .images:nth-child(7n) {
     transform: scale(1.3);
-    transform: translate(50px, 30px) scale(.8);
+    transform: translate(50px, 30px);
   }
   .gallery .images:nth-child(8n) {
     transform: translate(-60px, -50px);
   }
   .gallery .images:nth-child(9n) {
-    transform: translatex(-20px) scale(1.2);
+    transform: translatex(-20px) scale(0.8);
   }
 }
+
 </style>

@@ -34,7 +34,7 @@
         We define the essence of your <br />
         brand through storytelling.
       </p>
-      <p class="text-[.85rem] sm:text-[.85rem] md:text-[1.05rem] lg:text-xl">
+      <p class="font-bold text-[.85rem] sm:text-[.85rem] md:text-[1.05rem] lg:text-xl">
         Every brand has an identity and a story <br />
         is the breath that infuses life into it. <br />
         Here at Blu Studios, we create a visually <br />
@@ -59,10 +59,10 @@
       <h2
         class="
           font-extrabold sm:mb-2
-          text-[18px]
-          sm:text-[18px] sm:pl-2
-          md:text-[22px]
-          lg:text-[36px]
+          text-[14px] uppercase pl-[4px]
+          sm:text-[16px] sm:pl-[12px]
+          md:text-[20px]
+          lg:text-[34px]
         "
       >
       Creating &amp; Curating since
@@ -85,9 +85,10 @@
           <span
             class="
               font-extrabold sm:mt-2
-              text-base
-              sm:text-[1rem]
-              md:text-[1.25rem]
+              text-[12px] uppercase
+              pl-4
+              sm:text-[14px]
+              md:text-[1rem]
               lg:text-[1.5rem]
             "
             >Years</span
@@ -111,9 +112,9 @@
           <span
             class="
               font-extrabold sm:mt-2
-              text-base
-              sm:text-[1rem]
-              md:text-[1.25rem]
+              text-[12px]
+              sm:text-[14px]
+              md:text-[1rem]
               lg:text-[1.5rem]
             "
             >&nbsp;</span
@@ -148,18 +149,18 @@
             <span
             class="
               font-extrabold sm:mt-2
-              text-base
-              sm:text-[1rem]
-              md:text-[1.25rem]
+              text-[12px] uppercase
+              sm:text-[14px]
+              md:text-[1rem]
               lg:text-[1.5rem]
             " v-if="calculateMonths<=1"
             >Month</span>
           <span
             class="
               font-extrabold sm:mt-2
-              text-base
-              sm:text-[1rem]
-              md:text-[1.25rem]
+              text-[12px] uppercase
+              sm:text-[14px]
+              md:text-[1rem]
               lg:text-[1.5rem]
             " v-else
             >Months</span>
@@ -181,9 +182,9 @@
           <span
             class="
               font-extrabold sm:mt-2
-              text-base
-              sm:text-[1rem]
-              md:text-[1.25rem]
+              text-[12px]
+              sm:text-[14px]
+              md:text-[1rem]
               lg:text-[1.5rem]
             "
             >&nbsp;</span
@@ -217,19 +218,19 @@
             <span
             class="
               font-extrabold sm:mt-2
-              text-base
-              sm:text-[1rem]
-              md:text-[1.25rem]
-              lg:text-[1.5rem]
+              text-[12px] uppercase
+              sm:text-[14px]
+              md:text-[1rem]
+              lg:text-[1.5rem] pr-4
             " v-if="calculateDays<=1"
             >Day</span>
           <span
             class="
               font-extrabold sm:mt-2
-              text-base
-              sm:text-[1rem]
-              md:text-[1.25rem]
-              lg:text-[1.5rem]
+              text-[12px] uppercase
+              sm:text-[14px]
+              md:text-[1rem]
+              lg:text-[1.5rem] pr-4
             " v-else
             >Days</span>
         </div>
@@ -237,7 +238,7 @@
     </div>
     <p
       class="
-        text-[10px] font-bold bg-white bg-opacity-70 pl-2
+        text-[10px] font-bold pl-2
         my-[20px]
         ml-[18px]
         sm:top-[55rem] sm:left-[2rem]
@@ -245,7 +246,7 @@
         lg:text-base lg:my-[50px] lg:ml-[4rem]
       "
     >
-      Blu Studios has worked with over 100 brands, national and international
+      Blu Studios has worked with over 100 brands, national and international.
     </p>
   </div>
 </template>
@@ -255,14 +256,14 @@ export default {
   computed: {
     calculateYears: function () {
       let currentDate = new Date();
-      let birthDate = new Date("2009/10/23");
+      let birthDate = new Date("2009/12/10");
       let difference = currentDate - birthDate;
       let age = Math.floor(difference / 31557600000);
       return age;
     },
     calculateMonths: function () {
       var today = new Date();
-      var dob = new Date("2009/10/23");
+      var dob = new Date("2009/12/10");
       if (today.getMonth() >= dob.getMonth()) {
         if (today.getDate() >= dob.getDate()) {
           return today.getMonth() - dob.getMonth();
@@ -283,7 +284,7 @@ export default {
     },
     calculateDays: function () {
       var today = new Date();
-      var dob = new Date("2009/10/23");
+      var dob = new Date("2009/12/10");
       if (today.getDate() > dob.getDate()) {
         return today.getDate() - dob.getDate() - 1;
       } else if (today.getDate() == dob.getDate()) {

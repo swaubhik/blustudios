@@ -6,7 +6,7 @@
       :key="image"
       @click="openLightboxOnSlide(index + 1)"
     >
-      <img :src="image" style="width: 100%" alt="Blustudios" />
+      <img :src="image" style="width: 100%" :alt="image" />
     </div>
 
     <FsLightbox :toggler="toggler" :slide="slide" :sources="images" />
